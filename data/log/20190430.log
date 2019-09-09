@@ -1,0 +1,84 @@
+[2019-04-30 14:34:22] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'where clause'
+SELECT sale_no,sale_num FROM `Al_orders` WHERE ( is_wholesale = '1' ) AND ( sale_state >= '1' ) AND ( sale_no >= '0' ) AND ( sale_goods_common_id = '1' ) ORDER BY sale_no desc LIMIT 1  
+[2019-04-30 14:34:22] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'field list'
+UPDATE `Al_orders` SET sale_state='1',sale_date='1556606062',sale_submit_date='1556606062',sale_no='1',sale_num='1',sale_goods_common_id='1' WHERE ( order_id = '4' ) AND ( buyer_id = '865' ) AND ( sale_state = '0' ) AND ( is_wholesale = '1' )
+[2019-04-30 14:34:46] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'where clause'
+SELECT sale_no,sale_num FROM `Al_orders` WHERE ( is_wholesale = '1' ) AND ( sale_state >= '1' ) AND ( sale_no >= '0' ) AND ( sale_goods_common_id = '1' ) ORDER BY sale_no desc LIMIT 1  
+[2019-04-30 14:34:46] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'field list'
+UPDATE `Al_orders` SET sale_state='1',sale_date='1556606086',sale_submit_date='1556606086',sale_no='1',sale_num='1',sale_goods_common_id='1' WHERE ( order_id = '4' ) AND ( buyer_id = '865' ) AND ( sale_state = '0' ) AND ( is_wholesale = '1' )
+[2019-04-30 14:34:54] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'where clause'
+SELECT sale_no,sale_num FROM `Al_orders` WHERE ( is_wholesale = '1' ) AND ( sale_state >= '1' ) AND ( sale_no >= '0' ) AND ( sale_goods_common_id = '1' ) ORDER BY sale_no desc LIMIT 1  
+[2019-04-30 14:34:54] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'field list'
+UPDATE `Al_orders` SET sale_state='1',sale_date='1556606094',sale_submit_date='1556606094',sale_no='1',sale_num='1',sale_goods_common_id='1' WHERE ( order_id = '4' ) AND ( buyer_id = '865' ) AND ( sale_state = '0' ) AND ( is_wholesale = '1' )
+[2019-04-30 14:35:15] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'where clause'
+SELECT sale_no,sale_num FROM `Al_orders` WHERE ( is_wholesale = '1' ) AND ( sale_state >= '1' ) AND ( sale_no >= '0' ) AND ( sale_goods_common_id = '1' ) ORDER BY sale_no desc LIMIT 1  
+[2019-04-30 14:35:15] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'field list'
+UPDATE `Al_orders` SET sale_state='1',sale_date='1556606115',sale_submit_date='1556606115',sale_no='1',sale_num='1',sale_goods_common_id='1' WHERE ( order_id = '4' ) AND ( buyer_id = '865' ) AND ( sale_state = '0' ) AND ( is_wholesale = '1' )
+[2019-04-30 14:35:19] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'where clause'
+SELECT sale_no,sale_num FROM `Al_orders` WHERE ( is_wholesale = '1' ) AND ( sale_state >= '1' ) AND ( sale_no >= '0' ) AND ( sale_goods_common_id = '1' ) ORDER BY sale_no desc LIMIT 1  
+[2019-04-30 14:35:19] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'field list'
+UPDATE `Al_orders` SET sale_state='1',sale_date='1556606119',sale_submit_date='1556606119',sale_no='1',sale_num='1',sale_goods_common_id='1' WHERE ( order_id = '4' ) AND ( buyer_id = '865' ) AND ( sale_state = '0' ) AND ( is_wholesale = '1' )
+[2019-04-30 14:35:24] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'where clause'
+SELECT sale_no,sale_num FROM `Al_orders` WHERE ( is_wholesale = '1' ) AND ( sale_state >= '1' ) AND ( sale_no >= '0' ) AND ( sale_goods_common_id = '1' ) ORDER BY sale_no desc LIMIT 1  
+[2019-04-30 14:35:24] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'field list'
+UPDATE `Al_orders` SET sale_state='1',sale_date='1556606124',sale_submit_date='1556606124',sale_no='1',sale_num='1',sale_goods_common_id='1' WHERE ( order_id = '4' ) AND ( buyer_id = '865' ) AND ( sale_state = '0' ) AND ( is_wholesale = '1' )
+[2019-04-30 14:35:33] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'where clause'
+SELECT sale_no,sale_num FROM `Al_orders` WHERE ( is_wholesale = '1' ) AND ( sale_state >= '1' ) AND ( sale_no >= '0' ) AND ( sale_goods_common_id = '1' ) ORDER BY sale_no desc LIMIT 1  
+[2019-04-30 14:35:33] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'field list'
+UPDATE `Al_orders` SET sale_state='1',sale_date='1556606133',sale_submit_date='1556606133',sale_no='1',sale_num='1',sale_goods_common_id='1' WHERE ( order_id = '4' ) AND ( buyer_id = '865' ) AND ( sale_state = '0' ) AND ( is_wholesale = '1' )
+[2019-04-30 14:38:05] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'where clause'
+SELECT sale_no,sale_num FROM `Al_orders` WHERE ( is_wholesale = '1' ) AND ( sale_state >= '1' ) AND ( sale_no >= '0' ) AND ( sale_goods_common_id = '1' ) ORDER BY sale_no desc LIMIT 1  
+[2019-04-30 14:38:05] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'field list'
+UPDATE `Al_orders` SET sale_state='1',sale_date='1556606285',sale_submit_date='1556606285',sale_no='1',sale_num='1',sale_goods_common_id='1' WHERE ( order_id = '4' ) AND ( buyer_id = '865' ) AND ( sale_state = '0' ) AND ( is_wholesale = '1' )
+[2019-04-30 14:38:59] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'where clause'
+SELECT sale_no,sale_num FROM `Al_orders` WHERE ( is_wholesale = '1' ) AND ( sale_state >= '1' ) AND ( sale_no >= '0' ) AND ( sale_goods_common_id = '1' ) ORDER BY sale_no desc LIMIT 1  
+[2019-04-30 14:38:59] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'field list'
+UPDATE `Al_orders` SET sale_state='1',sale_date='1556606339',sale_submit_date='1556606339',sale_no='1',sale_num='1',sale_goods_common_id='1' WHERE ( order_id = '4' ) AND ( buyer_id = '865' ) AND ( sale_state = '0' ) AND ( is_wholesale = '1' )
+[2019-04-30 14:39:35] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'where clause'
+SELECT sale_no,sale_num FROM `Al_orders` WHERE ( is_wholesale = '1' ) AND ( sale_state >= '1' ) AND ( sale_no >= '0' ) AND ( sale_goods_common_id = '1' ) ORDER BY sale_no desc LIMIT 1  
+[2019-04-30 14:39:35] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'field list'
+UPDATE `Al_orders` SET sale_state='1',sale_date='1556606375',sale_submit_date='1556606375',sale_no='1',sale_num='1',sale_goods_common_id='1' WHERE ( order_id = '5' ) AND ( buyer_id = '865' ) AND ( sale_state = '0' ) AND ( is_wholesale = '1' )
+[2019-04-30 14:40:12] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'where clause'
+SELECT sale_no,sale_num FROM `Al_orders` WHERE ( is_wholesale = '1' ) AND ( sale_state >= '1' ) AND ( sale_no >= '0' ) AND ( sale_goods_common_id = '1' ) ORDER BY sale_no desc LIMIT 1  
+[2019-04-30 14:40:12] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'field list'
+UPDATE `Al_orders` SET sale_state='1',sale_date='1556606412',sale_submit_date='1556606412',sale_no='1',sale_num='1',sale_goods_common_id='1' WHERE ( order_id = '5' ) AND ( buyer_id = '865' ) AND ( sale_state = '0' ) AND ( is_wholesale = '1' )
+[2019-04-30 14:40:18] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'where clause'
+SELECT sale_no,sale_num FROM `Al_orders` WHERE ( is_wholesale = '1' ) AND ( sale_state >= '1' ) AND ( sale_no >= '0' ) AND ( sale_goods_common_id = '1' ) ORDER BY sale_no desc LIMIT 1  
+[2019-04-30 14:40:18] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'field list'
+UPDATE `Al_orders` SET sale_state='1',sale_date='1556606418',sale_submit_date='1556606418',sale_no='1',sale_num='1',sale_goods_common_id='1' WHERE ( order_id = '5' ) AND ( buyer_id = '865' ) AND ( sale_state = '0' ) AND ( is_wholesale = '1' )
+[2019-04-30 14:40:40] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'where clause'
+SELECT sale_no,sale_num FROM `Al_orders` WHERE ( is_wholesale = '1' ) AND ( sale_state >= '1' ) AND ( sale_no >= '0' ) AND ( sale_goods_common_id = '1' ) ORDER BY sale_no desc LIMIT 1  
+[2019-04-30 14:40:40] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'field list'
+UPDATE `Al_orders` SET sale_state='1',sale_date='1556606440',sale_submit_date='1556606440',sale_no='1',sale_num='1',sale_goods_common_id='1' WHERE ( order_id = '5' ) AND ( buyer_id = '865' ) AND ( sale_state = '0' ) AND ( is_wholesale = '1' )
+[2019-04-30 14:41:21] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'where clause'
+SELECT sale_no,sale_num FROM `Al_orders` WHERE ( is_wholesale = '1' ) AND ( sale_state >= '1' ) AND ( sale_no >= '0' ) AND ( sale_goods_common_id = '1' ) ORDER BY sale_no desc LIMIT 1  
+[2019-04-30 14:41:21] /mobile/index.php?act=member_order&op=go_sale ( act=member_order&op=go_sale ) 
+ERR: Db Error: Unknown column 'sale_goods_common_id' in 'field list'
+UPDATE `Al_orders` SET sale_state='1',sale_date='1556606481',sale_submit_date='1556606481',sale_no='1',sale_num='1',sale_goods_common_id='1' WHERE ( order_id = '5' ) AND ( buyer_id = '865' ) AND ( sale_state = '0' ) AND ( is_wholesale = '1' )

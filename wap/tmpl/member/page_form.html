@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-touch-fullscreen" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+  <title>易货区</title>
+  <link rel="stylesheet" type="text/css" href="../../css/base.css">
+  <link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+</head>
+
+<body>
+  <header id="header" class="fixed">
+    <div class="header-wrap">
+      <div class="header-l"><a href="member.html"><i class="back"></i></a></div>
+      <div class="header-title">
+        <h1>发布</h1>
+      </div>
+      <div class="header-r"><a id="header-nav" href="javascript:void(0);"><i class="more"></i><sup></sup></a></div>
+    </div>
+    <div class="nctouch-nav-layout">
+      <div class="nctouch-nav-menu"><span class="arrow"></span>
+        <ul>
+          <li><a href="../../index.html"><i class="home"></i>首页</a></li>
+          <li><a href="../search.html"><i class="search"></i>搜索</a></li>
+          <li><a href="javascript:void(0);"><i class="message"></i>消息<sup></sup></a></li>
+          <li><a href="../cart_list.html"><i class="cart"></i>购物车<sup></sup></a></li>
+          <li><a href="../member/member.html"><i class="member"></i>个人中心</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="nctouch-main-layout">
+    <div class="nctouch-inp-con">
+      <form action="" method="" id="ff">
+        <ul class="form-box">
+          <li class="form-item">
+            <h4>联系方式</h4>
+            <div class="input-box">
+              <input type="text" id="phone" name="phone" class="inp" autocomplete="off" maxlength="20" placeholder="联系方式" /></div>
+          </li>
+
+          <li class="form-item">
+            <h4>内容</h4>
+            <div class="input-box">
+              <textarea style="width:100%;height: 1.66rem;    border-color: rgb(169, 169, 169)" name="input_content"></textarea></div>
+          </li>
+          <li class="form-item">
+            <h4>图片1</h4>
+            <div class="input-box">
+              <input class="inp" id="storeimg1" type="file" />
+              <span class="input-del"></span> </div>
+          </li>
+          <li class="form-item">
+            <h4>图片2</h4>
+            <div class="input-box">
+              <input class="inp" id="storeimg2" type="file" />
+              <span class="input-del"></span> </div>
+          </li>
+          <li class="form-item">
+            <h4>图片3</h4>
+            <div class="input-box">
+              <input class="inp" id="storeimg3" type="file" />
+              <span class="input-del"></span> </div>
+          </li>
+          <li class="form-item">
+            <h4>图片4</h4>
+            <div class="input-box">
+              <input class="inp" id="storeimg4" type="file" />
+              <span class="input-del"></span> </div>
+          </li>
+        </ul>
+      </form>
+      <form action="" method="">
+        <div class="error-tips"></div>
+        <div class="form-btn ok"><a href="javascript:void(0);" class="btn form-btn" id="nextform">提交</a></div>
+      </form>
+    </div>
+
+
+  </div>
+  <div class="fix-block-r">
+    <a href="javascript:void(0);" class="gotop-btn gotop hide" id="goTopBtn"><i></i></a>
+  </div>
+  <footer id="footer" class="bottom"></footer>
+  <script type="text/javascript" src="../../js/config.js"></script>
+  <script type="text/javascript" src="../../js/zepto.min.js"></script>
+  <script type="text/javascript" src="../../js/template.js"></script>
+  <script type="text/javascript" src="../../js/common.js"></script>
+  <script type="text/javascript" src="../../js/simple-plugin.js"></script>
+  <script type="text/javascript" src="../../js/zepto.waypoints.js"></script>
+  <script type="text/javascript" src="../../js/ncscroll-load.js"></script>
+  <script>
+    function photoCompress(file, w, objDiv) {
+      var ready = new FileReader();
+      /*开始读取指定的Blob对象或File对象中的内容. 当读取操作完成时,readyState属性的值会成为DONE,如果设置了onloadend事件处理程序,则调用之.同时,result属性中将包含一个data: URL格式的字符串以表示所读取文件的内容.*/
+      ready.readAsDataURL(file);
+      ready.onload = function() {
+        var re = this.result;
+        canvasDataURL(re, w, objDiv)
+      }
+    }
+
+    function canvasDataURL(path, obj, callback) {
+      var img = new Image();
+      img.src = path;
+      img.onload = function() {
+        var that = this;
+        // 默认按比例压缩
+        var w = that.width,
+          h = that.height,
+          scale = w / h;
+        w = obj.width || w;
+        h = obj.height || (w / scale);
+        var quality = 0.7; // 默认图片质量为0.7
+        //生成canvas
+        var canvas = document.createElement('canvas');
+        var ctx = canvas.getContext('2d');
+        // 创建属性节点
+        var anw = document.createAttribute("width");
+        anw.nodeValue = w;
+        var anh = document.createAttribute("height");
+        anh.nodeValue = h;
+        canvas.setAttributeNode(anw);
+        canvas.setAttributeNode(anh);
+        ctx.drawImage(that, 0, 0, w, h);
+        // 图像质量
+        if (obj.quality && obj.quality <= 1 && obj.quality > 0) {
+          quality = obj.quality;
+        }
+        // quality值越小，所绘制出的图像越模糊
+        var base64 = canvas.toDataURL('image/jpeg', quality);
+        // 回调函数返回base64的值
+        callback(base64);
+      }
+    }
+    /**
+     * 将以base64的图片url数据转换为Blob
+     * @param urlData
+     *            用url方式表示的base64图片数据
+     */
+    function convertBase64UrlToBlob(urlData) {
+      var arr = urlData.split(','),
+        mime = arr[0].match(/:(.*?);/)[1],
+        bstr = atob(arr[1]),
+        n = bstr.length,
+        u8arr = new Uint8Array(n);
+      while (n--) {
+        u8arr[n] = bstr.charCodeAt(n);
+      }
+      return new Blob([u8arr], {
+        type: mime
+      });
+    }
+
+
+    var post_data = 0;
+    var submit_images = {};
+    $(function() {
+      var key = getCookie('key');
+      if (!key) {
+        window.location.href = WapSiteUrl + '/tmpl/member/login.html';
+        return;
+      }
+      $('#nextform').click(function() {
+        if (post_data) {
+          errorTipsShow("<p>正在处理中，请勿重复点击！</p>");
+          return false;
+        }
+
+        var formData = new FormData($("#ff")[0]);
+        formData.append("key", key);
+        submit_images = {};
+		var imgcount = 0;
+        if ($("#storeimg1")[0].files.length) {
+		    imgcount += 1;
+            photoCompress($("#storeimg1")[0].files[0], {
+              quality: 0.7,
+              width: 640
+            }, function(base64Codes) {
+              var bl = convertBase64UrlToBlob(base64Codes);
+              formData.append("storeimg1", bl, "storeimg1.jpg");
+              submit_images["storeimg1"] = true;
+              ajax(formData);
+            });
+          }
+		if ($("#storeimg2")[0].files.length) {
+		    imgcount += 1;
+            photoCompress($("#storeimg2")[0].files[0], {
+              quality: 0.7,
+              width: 640
+            }, function(base64Codes) {
+              var bl = convertBase64UrlToBlob(base64Codes);
+              formData.append("storeimg2", bl, "storeimg2.jpg");
+              submit_images["storeimg2"] = true;
+              ajax(formData);
+            });
+          }
+		if ($("#storeimg3")[0].files.length) {
+		    imgcount += 1;
+            photoCompress($("#storeimg3")[0].files[0], {
+              quality: 0.7,
+              width: 640
+            }, function(base64Codes) {
+              var bl = convertBase64UrlToBlob(base64Codes);
+              formData.append("storeimg3", bl, "storeimg3.jpg");
+              submit_images["storeimg3"] = true;
+              ajax(formData);
+            });
+          }
+		if ($("#storeimg4")[0].files.length) {
+		    imgcount += 1;
+            photoCompress($("#storeimg4")[0].files[0], {
+              quality: 0.7,
+              width: 640
+            }, function(base64Codes) {
+              var bl = convertBase64UrlToBlob(base64Codes);
+              formData.append("storeimg4", bl, "storeimg4.jpg");
+              submit_images["storeimg4"] = true;
+              ajax(formData);
+            });
+          }
+		if(imgcount == 0) {
+			ajax(formData);
+		}
+      });
+    });
+
+    function ajax(formData) {
+      for (var i = 1; i < 5; i++) {
+        var name = 'storeimg' + i;
+        if ($("#" + name)[0].files.length && !submit_images[name]) {
+          return false;
+        }
+      }
+	  
+        post_data = 1;
+
+      $.ajax({
+        type: 'post',
+        url: ApiUrl + '/index.php?act=member_index&op=submit_form',
+        dataType: 'json',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(result) {
+			
+        post_data = 0;
+          checkLogin(result.login);
+          if (result.code !== 200) {
+            $.sDialog({
+              skin: "red",
+              content: result.datas.error,
+              okBtn: false,
+              cancelBtn: false
+            });
+          } else {
+            $.sDialog({
+              skin: "red",
+              content: "提交成功",
+              okBtn: false,
+              cancelBtn: false
+            });
+          }
+          return false;
+        }
+      });
+
+    }
+
+    function dataURItoBlob(base64Data) {
+      var byteString;
+      if (base64Data.split(',')[0].indexOf('base64') >= 0)
+        byteString = atob(base64Data.split(',')[1]);
+      else
+        byteString = unescape(base64Data.split(',')[1]);
+      var mimeString = base64Data.split(',')[0].split(':')[1].split(';')[0];
+      var ia = new Uint8Array(byteString.length);
+      for (var i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+      }
+      return new Blob([ia], {
+        type: mimeString
+      });
+    }
+  </script>
+</body>
+
+</html>

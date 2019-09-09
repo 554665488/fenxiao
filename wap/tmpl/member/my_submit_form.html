@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>易货区</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+
+<style type="text/css">
+        body { font-size: 12px; line-height: 120%; text-align: center; color:#333;}
+        a { color: #333; text-decoration: none;}
+        a:hover { text-decoration: underline;}
+        * { margin: 0; padding: 0; border: none;}
+        .clearfix:after { content:"."; display:block; height:0; clear:both; visibility:hidden}
+        .clearfix { *height:1%;}
+        #list { margin: 0 auto; text-align: left; width: 540px;background-color: #FFF;}
+        .box { border-top: 1px solid #eee; position: relative;  width: 540px; padding: 20px 0}
+        .box:hover .close { display: block;}
+        .close { display: none; top:0px; right: 0px; width: 28px; height: 28px; border: 1px solid #eee; position: absolute; background: #f2f4f7; line-height: 27px; text-align: center;}
+        .close:hover { background: #c8d2e2; text-decoration: none;}
+        .head { float: left; width: 20px; height: 60px; margin-right: 10px;}
+        .main { margin-bottom: 10px;}
+        .txt { margin-bottom: 10px;}
+        .user { color: #369; }
+        .pic { margin-right: 5px; width: 200px; border: 1px solid #eee;}
+        .info { height: 20px; line-height: 19px; font-size: 12px; margin: 0 0 10px 0;}
+        .info .time { color: #ccc; float: left; height: 20px; padding-left: 20px; background: url("images/bg1.jpg") no-repeat left top;}
+        .info .praise { color: #369; float: right; height: 20px; padding-left: 18px; background: url("images/bg2.jpg") no-repeat left top;}
+        .info .praise:hover { text-decoration: underline; background: url("images/bg3.jpg") no-repeat left top;}
+    </style>
+
+</head>
+<body>
+<header id="header" class="fixed">
+  <div class="header-wrap">
+    <div class="header-l"><a href="javascript:history.go(-1)"> <i class="back"></i> </a></div>
+    <div class="header-title">
+      <h1>易货区</h1>
+    </div>
+    <div class="header-r">  </div>
+  </div>
+  <div class="nctouch-nav-layout">
+    <div class="nctouch-nav-menu"> <span class="arrow"></span>
+      <ul>
+        <li><a href="../../index.html"><i class="home"></i>首页</a></li>
+        <li><a href="../member/member.html"><i class="member"></i>我的</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="nctouch-main-layout">
+  <div id="list">
+  </div>
+</div>
+<div class="fix-block-r">
+    <a href="javascript:void(0);" class="gotop-btn gotop hide" id="goTopBtn"><i></i></a>
+</div>
+<script type="text/html" id="list_model">
+        <% if(list.length >0){%>
+        <% for (var k in list) { var v = list[k]; %>
+            <div class="box clearfix">
+            <img class="head" src="images/1.jpg" alt=""/>
+            <div class="content">
+                <div class="main">
+                    <p class="txt">
+                        <span class="user"><%=v.member_name%>：</span><%=v.input_content%>
+                    </p>
+					<% if(v.img1 != '') {%>
+					  <img class="pic" src="/data/upload/shop/store_joinin/<%=v.img1%>" alt=""/>
+					<%}%>
+                    <% if(v.img2 != '') {%>
+					  <img class="pic" src="/data/upload/shop/store_joinin/<%=v.img2%>" alt=""/>
+					<%}%>
+					<% if(v.img3 != '') {%>
+					  <img class="pic" src="/data/upload/shop/store_joinin/<%=v.img3%>" alt=""/>
+					<%}%>
+					<% if(v.img4 != '') {%>
+					  <img class="pic" src="/data/upload/shop/store_joinin/<%=v.img4%>" alt=""/>
+					<%}%>
+                </div>
+                <div class="info clearfix">
+                    <span class="time"><%=v.create_date%></span>
+                </div>
+            </div>
+        </div>
+
+        <%}%>
+        <div class="loading"><div class="spinner"><i></i></div>数据读取中</div>
+        <%}else {%>
+        <div class="nctouch-norecord pdre">
+            <div class="norecord-ico"><i></i></div>
+            <dl>
+                <dt>您尚无相关记录</dt>
+				<dd></dd>
+            </dl>
+        </div>
+        <%}%>
+</script> 
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/zepto.waypoints.js"></script>
+<script type="text/javascript" src="../../js/ncscroll-load.js"></script> 
+<script>
+    $(function(){
+        var key = getCookie('key');
+        if (!key) {
+            window.location.href = WapSiteUrl+'/tmpl/member/login.html';
+            return;
+        }
+        //渲染list
+        var load_class = new ncScrollLoad();
+        load_class.loadInit({
+            'url':ApiUrl + '/index.php?act=member_index&op=submit_form_list',
+            'getparam':{'key':key},
+            'tmplid':'list_model',
+            'containerobj':$("#list"),
+            'iIntervalId':true
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+[2019-07-16 13:08:43] /mobile/index.php?act=member_buy&op=buy_step2 ( act=member_buy&op=buy_step2 ) 
+ERR: Db Error: Column 'goods_apoint_rate' cannot be null
+INSERT INTO `Al_order_goods` (order_id,goods_id,store_id,goods_name,goods_price,goods_num,goods_image,goods_spec,invite_rates,buyer_id,goods_type,promotions_id,commis_rate,gc_id,goods_apoint_rate,goods_point_rate2,z_goods_type,sale_goods_common_id,goods_contractid,goods_pay_price) VALUES ('132','6','1','食源康.心乐','1913.00','1','1_06162679590607551.png',NULL,'0.00','4','1','0','200','643',NULL,NULL,NULL,'0','','1913')
+[2019-07-16 13:08:48] /mobile/index.php?act=member_buy&op=buy_step2 ( act=member_buy&op=buy_step2 ) 
+ERR: Db Error: Column 'goods_apoint_rate' cannot be null
+INSERT INTO `Al_order_goods` (order_id,goods_id,store_id,goods_name,goods_price,goods_num,goods_image,goods_spec,invite_rates,buyer_id,goods_type,promotions_id,commis_rate,gc_id,goods_apoint_rate,goods_point_rate2,z_goods_type,sale_goods_common_id,goods_contractid,goods_pay_price) VALUES ('133','6','1','食源康.心乐','1913.00','1','1_06162679590607551.png',NULL,'0.00','4','1','0','200','643',NULL,NULL,NULL,'0','','1913')
+[2019-07-16 13:09:47] /mobile/index.php?act=member_buy&op=buy_step2 ( act=member_buy&op=buy_step2 ) 
+ERR: Db Error: Column 'goods_point_rate2' cannot be null
+INSERT INTO `Al_order_goods` (order_id,goods_id,store_id,goods_name,goods_price,goods_num,goods_image,goods_spec,invite_rates,buyer_id,goods_type,promotions_id,commis_rate,gc_id,goods_apoint_rate,goods_point_rate2,z_goods_type,sale_goods_common_id,goods_contractid,goods_pay_price) VALUES ('134','6','1','食源康.心乐','1913.00','1','1_06162679590607551.png',NULL,'0.00','4','1','0','200','643',NULL,NULL,NULL,'0','','1913')
+[2019-07-16 13:10:10] /mobile/index.php?act=member_buy&op=buy_step2 ( act=member_buy&op=buy_step2 ) 
+ERR: Db Error: Column 'z_goods_type' cannot be null
+INSERT INTO `Al_order_goods` (order_id,goods_id,store_id,goods_name,goods_price,goods_num,goods_image,goods_spec,invite_rates,buyer_id,goods_type,promotions_id,commis_rate,gc_id,goods_apoint_rate,goods_point_rate2,z_goods_type,sale_goods_common_id,goods_contractid,goods_pay_price) VALUES ('135','6','1','食源康.心乐','1913.00','1','1_06162679590607551.png',NULL,'0.00','4','1','0','200','643',NULL,NULL,NULL,'0','','1913')
+[2019-07-16 13:14:21] /mobile/index.php?act=member_buy&op=buy_step2 ( act=member_buy&op=buy_step2 ) 
+ERR: Db Error: Column 'z_goods_type' cannot be null
+INSERT INTO `Al_order_goods` (order_id,goods_id,store_id,goods_name,goods_price,goods_num,goods_image,goods_spec,invite_rates,buyer_id,goods_type,promotions_id,commis_rate,gc_id,goods_apoint_rate,goods_point_rate2,z_goods_type,sale_goods_common_id,goods_contractid,goods_pay_price) VALUES ('136','6','1','食源康.心乐','1913.00','1','1_06162679590607551.png',NULL,'0.00','4','1','0','200','643',NULL,NULL,NULL,'0','','1913')
+[2019-07-16 13:15:06] /mobile/index.php?act=member_buy&op=buy_step2 ( act=member_buy&op=buy_step2 ) 
+ERR: Db Error: Column 'z_goods_type' cannot be null
+INSERT INTO `Al_order_goods` (order_id,goods_id,store_id,goods_name,goods_price,goods_num,goods_image,goods_spec,invite_rates,buyer_id,goods_type,promotions_id,commis_rate,gc_id,goods_apoint_rate,goods_point_rate2,z_goods_type,sale_goods_common_id,goods_contractid,goods_pay_price) VALUES ('137','6','1','食源康.心乐','1913.00','1','1_06162679590607551.png',NULL,'0.00','4','1','0','200','643',NULL,NULL,NULL,'0','','1913')

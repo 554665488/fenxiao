@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1"/>
+    <title>账户余额</title>
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+</head>
+<body>
+<header id="header" class="fixed">
+    <div class="header-wrap">
+        <div class="header-l"><a href="member_asset.html"><i class="back"></i></a></div>
+        <div class="header-title">
+            <h1>转账</h1>
+        </div>
+        <div class="header-r"><a id="header-nav" href="javascript:void(0);"><i class="more"></i><sup></sup></a></div>
+    </div>
+    <div class="nctouch-nav-layout">
+        <div class="nctouch-nav-menu"><span class="arrow"></span>
+            <ul>
+                <li><a href="../../index.html"><i class="home"></i>首页</a></li>
+                <li><a href="../search.html"><i class="search"></i>搜索</a></li>
+                <li><a href="../product_first_categroy.html"><i class="categroy"></i>分类</a></li>
+                <li><a href="javascript:void(0);"><i class="message"></i>消息<sup></sup></a></li>
+                <li><a href="../cart_list.html"><i class="cart"></i>购物车<sup></sup></a></li>
+                <li><a href="../member/member.html"><i class="member"></i>个人中心</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="nctouch-main-layout">
+    <div id="pd_count" style="height: 4rem" class="nctouch-asset-info"></div>
+
+    <div class="nctouch-inp-con">
+        <form action="" method="">
+            <ul class="form-box">
+                <li class="form-item">
+                    <h4>转账金额</h4>
+                    <div class="input-box">
+                        <input type="text" id="money" name="money" class="inp" autocomplete="off" maxlength="11"
+                               placeholder="转到金额"/></div>
+                </li>
+
+                <li class="form-item">
+                    <h4>收款账户</h4>
+                    <div class="input-box">
+                        <input type="text" id="mtarget" name="mtarget" class="inp" autocomplete="off" maxlength="32"
+                               placeholder="收款人用户名"/></div>
+                </li>
+		<li class="form-item">
+                    <h4>支付密码</h4>
+                    <div class="input-box">
+                        <input type="password" id="paypsd" name="paypsd" class="inp" autocomplete="off" maxlength="11"
+                               placeholder="支付密码"/></div>
+                </li>
+            </ul>
+        </form>
+        <form action="" method="">
+            <div class="error-tips"></div>
+            <div class="form-btn ok"><a href="javascript:void(0);" class="btn form-btn" id="nextform">提交</a></div>
+        </form>
+    </div>
+
+
+</div>
+<div class="fix-block-r">
+    <a href="javascript:void(0);" class="gotop-btn gotop hide" id="goTopBtn"><i></i></a>
+</div>
+<footer id="footer" class="bottom"></footer>
+<script type="text/html" id="pd_count_model">
+    <div class="container pre">
+        <i class="icon"></i>
+        <dl>
+            <dt>余额</dt>
+            <dd><em><%=predepoit;%></em></dd>
+        </dl>
+
+    </div>
+    <div style="font-size: .6rem;color: red;text-align: center;margin-top: 5px">转账费率:<%=rate;%>%</div>
+
+</script>
+<script type="text/javascript" src="../../js/config.js"></script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/template.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/simple-plugin.js"></script>
+<script type="text/javascript" src="../../js/zepto.waypoints.js"></script>
+<script type="text/javascript" src="../../js/ncscroll-load.js"></script>
+<script>
+    $(function () {
+        var key = getCookie('key');
+        if (!key) {
+            window.location.href = WapSiteUrl + '/tmpl/member/login.html';
+            return;
+        }
+        //获取预存款余额
+        $.getJSON(ApiUrl + '/index.php?act=member_index&op=my_asset', {
+            'key': key,
+            'fields': 'predepoit'
+        }, function (result) {
+            var html = template.render('pd_count_model', result.datas);
+            $("#pd_count").html(html);
+
+            $('#fixed_nav').waypoint(function () {
+                $('#fixed_nav').toggleClass('fixed');
+            }, {
+                offset: '50'
+            });
+        });
+
+        var post_data = 0;
+        $('#nextform').click(function () {
+            if (post_data) {
+                errorTipsShow("<p>正在处理中，请勿重复点击！</p>");
+                return false;
+            }
+            var money = $('#money').val();
+            if (money == '') {
+                $.sDialog({
+                    skin: "red",
+                    content: '请输入转账金额',
+                    okBtn: false,
+                    cancelBtn: false
+                });
+                return false;
+            }
+            var target = $('#mtarget').val();
+            if (target == '') {
+                $.sDialog({
+                    skin: "red",
+                    content: '请输入收款人',
+                    okBtn: false,
+                    cancelBtn: false
+                });
+                return false;
+            }
+	    var paypsd = $('#paypsd').val();
+            if (paypsd == '') {
+                $.sDialog({
+                    skin: "red",
+                    content: '请输入支付密码',
+                    okBtn: false,
+                    cancelBtn: false
+                });
+                return false;
+            }
+
+	    if(!confirm('确定转账给用户' + target + '?')) {
+		return false;
+	    }
+            post_data = 1;
+            $.ajax({
+                url: ApiUrl + "/index.php?act=member_index&op=predepoit_transfer",
+                type: "post",
+                dataType: "json",
+                data: {key: key, money: money, target: target, paypsd: paypsd},
+                success: function (result) {
+                    if (checkLogin(result.login)) {
+                        if (!result.datas.error) {
+                            errorTipsShow('<p>提交成功</p>');
+
+                            setTimeout(function () {
+                                window.location.href = WapSiteUrl + '/tmpl/member/predepoit_transfer.html';
+                            }, 3000);
+                        } else {
+			    post_data = 0;
+                            errorTipsShow('<p>' + result.datas.error + '</p>');
+                        }
+                    }
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

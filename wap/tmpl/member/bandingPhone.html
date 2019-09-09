@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>微信手机号绑定</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+<style>
+        .member-select {
+         height: 1.95rem;
+         line-height: 1.95rem;
+         width:80%;
+         border:none;
+         text-align:right;
+     }
+</style>
+</head>
+<body>
+<header id="header">
+	<div class="header-wrap">
+		<div class="header-l">
+			<a href="voucher_list1.html">
+				<i class="back"></i>
+			</a>
+		</div>
+		<div class="header-title">
+			<h1>微信手机号绑定</h1>
+		</div>
+	</div>
+</header>
+<div class="nctouch-main-layout"> 
+  <div class="nctouch-inp-con">
+    <form action="" method ="">
+    <ul class="form-box"> 
+      <li class="form-item">
+            <h4>真实姓名</h4>
+            <div class="input-box">
+              <input type="text" id="txtName" name="txtName"   class="inp" autocomplete="off" placeholder="输入真实姓名" oninput="writeClear($(this));"/>
+            </div>
+          </li>
+      <li class="form-item">
+        <h4>手机号</h4>
+        <div class="input-box">
+          <input type="text" id="txtPhone" name="txtPhone"  class="inp"   autocomplete="off" placeholder="输入手机号" oninput="writeClear($(this));"/>
+        </div>
+      </li>
+      <li class="form-item">
+        <h4>推荐人</h4>
+        <div class="input-box">
+          <input type="text" id="txtrecmember" name="txtrecmember" data-valid=true class="inp" autocomplete="off" placeholder="输入推荐人" oninput="writeClear($(this));"/>
+        </div>
+      </li>
+    </ul>
+    <div class="error-tips"></div>
+    <div class="form-btn"><a href="javascript:void(0);" class="btn" id="nextform">确 认</a></div>
+    </form>
+  </div>
+</div> 
+<script> var navigate_id ="5";</script> 
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/simple-plugin.js"></script> 
+
+<script type="text/javascript" src="../../js/tmpl/footer.js"></script>
+<script type="text/javascript">
+$(function() { 
+  var userinfo =getQueryString('userinfo');
+  var getrecmember= getQueryString('recmember'); 
+  var client= getQueryString('types'); 
+  
+  $("#txtrecmember").val(getrecmember);
+    $.sValid.init({
+        rules:{ 
+			txtName: {
+                required : "请必须输入真实姓名"
+            },
+            txtPhone: {
+                required : "请填写手机号"
+            } 
+        },
+        messages:{
+        	txtName: {
+            	number : "请必须输入真实姓名" 
+            },
+            txtPhone: {
+            	number : "请填写手机号" 
+            }
+        },
+        callback:function (eId,eMsg,eRules){
+            if(eId.length >0){
+                var errorHtml = "";
+                $.map(eMsg,function (idx,item){
+                    errorHtml += "<p>"+idx+"</p>";
+                });
+                errorTipsShow(errorHtml);
+            }else{
+                errorTipsHide();
+            }
+        }
+    });
+
+    $('#nextform').click(function(){
+        if (!$(this).parent().hasClass('ok')) {
+            return false;
+        } 
+        let  txtName=$('#txtName').val();
+        let txtPhone= $('#txtPhone').val();
+        let recmember= $("#txtrecmember").val();
+       
+        if($.sValid()){
+            console.log(txtPhone+"  "+txtName)
+            $.ajax({
+                type:'post',
+                url:ApiUrl+"/index.php?act=login&op=wxregister",
+                data:{ username:txtName, Phone:txtPhone,userinfo:userinfo,recmember:recmember,client:client},
+                dataType:'json',
+                success:function(result){
+                    console.log(result)
+                    if(!result.datas.error){
+						if(typeof(result.datas.key)=='undefined'){
+							return false;
+						}else{
+                            // 更新cookie购物车
+                            updateCookieCart(result.datas.key);
+							addCookie('username',result.datas.username);
+							addCookie('key',result.datas.key);
+							location.href = WapSiteUrl+'/tmpl/member/member.html';
+						}
+		                errorTipsHide();
+					}else{
+		                errorTipsShow("<p>"+result.datas.error+"</p>");
+		                register_member = 0;
+					}
+                }
+            });
+        }
+
+    });
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+[2019-08-07 01:55:41] http://mmm.frddzsh.com/shop/index.php?act=store_bill&op=show_bill&type=refund&ob_id=3 ( act=store_bill&op=show_bill ) 
+ERR: Db Error: Unknown table 'refund_return'
+SELECT refund_return.*,ROUND(refund_amount*commis_rate/100,2) as commis_amount FROM `Al_refund_return` WHERE ( seller_state = '2' ) AND ( store_id = '1' ) AND ( goods_id > '0' ) AND (  (admin_time BETWEEN '1561910400' AND '1564588799' ) ) ORDER BY refund_id desc LIMIT 0,20  
+[2019-08-07 17:09:36] http://mmm.frddzsh.com/shop/index.php?act=store_bill&op=show_bill&type=refund&ob_id=3 ( act=store_bill&op=show_bill ) 
+ERR: Db Error: Unknown table 'refund_return'
+SELECT refund_return.*,ROUND(refund_amount*commis_rate/100,2) as commis_amount FROM `Al_refund_return` WHERE ( seller_state = '2' ) AND ( store_id = '1' ) AND ( goods_id > '0' ) AND (  (admin_time BETWEEN '1561910400' AND '1564588799' ) ) ORDER BY refund_id desc LIMIT 0,20  

@@ -1,0 +1,3 @@
+[2019-07-20 13:14:28] /mobile/index.php?act=brand&op=cpay ( act=brand&op=cpay ) 
+ERR: Db Error: Unknown column 'Array' in 'where clause'
+UPDATE `Al_orders` SET can_pay_date='1563552000' WHERE ( is_wholesale = '0' ) AND ( order_id <= Array )
