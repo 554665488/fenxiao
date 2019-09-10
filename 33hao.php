@@ -15,11 +15,12 @@ define("BASE_UPLOAD_PATH", BASE_ROOT_PATH . "/data/upload");
 define("BASE_RESOURCE_PATH", BASE_ROOT_PATH . "/data/resource");
 //二维码图片存放地址
 define("BASE_QRCODE_PATH", BASE_ROOT_PATH . "/data/upload/qrcode");
-if(strpos($_SERVER['SERVER_PROTOCOL'],'HTTP/1.1') !== false){
-    define("BASE_QRCODE_URL", 'http://' . $_SERVER['HTTP_HOST'] . '/wap/tmpl/member/register.html');
-}else{
-    define("BASE_QRCODE_URL", 'https://' . $_SERVER['HTTP_HOST'] . '/wap/tmpl/member/register.html');
-}
+////废弃
+//if(strpos($_SERVER['SERVER_PROTOCOL'],'HTTP/1.1') !== false){
+//    define("BASE_QRCODE_URL", 'http://' . $_SERVER['HTTP_HOST'] . '/wap/tmpl/member/register.html');
+//}else{
+//    define("BASE_QRCODE_URL", 'https://' . $_SERVER['HTTP_HOST'] . '/wap/tmpl/member/register.html');
+//}
 
 
 /**

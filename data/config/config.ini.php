@@ -1,21 +1,21 @@
 <?php
 //by 好商城
 $config = array();
-$config['base_site_url'] 	    = 'http://www.shop123.com';
-$config['shop_site_url']        = 'http://www.shop123.com/shop';
-$config['cms_site_url']         = 'http://www.shop123.com/cms';
-$config['microshop_site_url']   = 'http://www.shop123.com/microshop';
-$config['circle_site_url']      = 'http://www.shop123.com/circle';
-$config['admin_site_url']       = 'http://www.shop123.com/admin';
-$config['mobile_site_url']      = 'http://www.shop123.com/mobile';
-$config['wap_site_url']         = 'http://www.shop123.com/wap';
-$config['chat_site_url']        = 'http://www.shop123.com/chat';
-$config['node_site_url'] 	    = 'http://www.shop123.com:33'; //如果要启用IM，把 http://mmm.frddzsh.com 修改为：http://您的服务器IP
-$config['delivery_site_url']    = 'http://www.shop123.com/delivery';
-$config['chain_site_url']       = 'http://www.shop123.com/chain';
-$config['member_site_url']      = 'http://www.shop123.com/member';
-$config['upload_site_url']      = 'http://www.shop123.com/data/upload';
-$config['resource_site_url']    = 'http://www.shop123.com/data/resource';
+$config['base_site_url'] 	    = 'http://'. $_SERVER['HTTP_HOST'] .'';
+$config['shop_site_url']        = 'http://'. $_SERVER['HTTP_HOST'] .'/shop';
+$config['cms_site_url']         = 'http://'. $_SERVER['HTTP_HOST'] .'/cms';
+$config['microshop_site_url']   = 'http://'. $_SERVER['HTTP_HOST'] .'/microshop';
+$config['circle_site_url']      = 'http://'. $_SERVER['HTTP_HOST'] .'/circle';
+$config['admin_site_url']       = 'http://'. $_SERVER['HTTP_HOST'] .'/admin';
+$config['mobile_site_url']      = 'http://'. $_SERVER['HTTP_HOST'] .'/mobile';
+$config['wap_site_url']         = 'http://'. $_SERVER['HTTP_HOST'] .'/wap';
+$config['chat_site_url']        = 'http://'. $_SERVER['HTTP_HOST'] .'/chat';
+$config['node_site_url'] 	    = 'http://'. $_SERVER['HTTP_HOST'] .':33'; //如果要启用IM，把 http://mmm.frddzsh.com 修改为：http://您的服务器IP
+$config['delivery_site_url']    = 'http://'. $_SERVER['HTTP_HOST'] .'/delivery';
+$config['chain_site_url']       = 'http://'. $_SERVER['HTTP_HOST'] .'/chain';
+$config['member_site_url']      = 'http://'. $_SERVER['HTTP_HOST'] .'/member';
+$config['upload_site_url']      = 'http://'. $_SERVER['HTTP_HOST'] .'/data/upload';
+$config['resource_site_url']    = 'http://'. $_SERVER['HTTP_HOST'] .'/data/resource';
 $config['version']              = '201802270001';
 $config['setup_date']           = '2019-03-23 22:40:41';
 $config['gip']                  = 0;

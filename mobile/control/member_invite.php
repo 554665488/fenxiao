@@ -25,11 +25,8 @@ class member_inviteControl extends mobileMemberControl {
      */
     public function indexOp() {
 		$member_id=$this->member_info['member_id'];
-
-
-	  $myurl=BASE_SITE_URL."/wap/tmpl/member/register.html?name=".$this->member_info['member_name'];
-
-		$str_member="member_qq".$member_id;
+	    $myurl=BASE_SITE_URL."/wap/tmpl/member/register.html?name=".$this->member_info['member_name'];
+		$str_member="memberqr_".$member_id;
 		$myurl_src=UPLOAD_SITE_URL.DS."shop".DS."member".DS.$str_member.'.png';
 		$imgfile=BASE_UPLOAD_PATH.DS."shop".DS."member".DS.$str_member . '.png';
 		if(!file_exists($imgfile)){
@@ -41,6 +38,7 @@ class member_inviteControl extends mobileMemberControl {
 			$PhpQRCode->set('pngTempName', $str_member . '.png');
 			$PhpQRCode->init();
 		}
+
 		$member_info = array();
         $member_info['user_name'] = $this->member_info['member_name'];
         $member_info['avator'] = getMemberAvatarForID($this->member_info['member_id']);
@@ -53,8 +51,6 @@ class member_inviteControl extends mobileMemberControl {
 		$mydownurl=BASE_SITE_URL."/index.php?act=invite&op=downqrfile&id=".$member_id;
 		$member_info['mydownurl']=$mydownurl;
         output_data(array('member_info' => $member_info));
-
-
     }
 	/**
 

@@ -51,9 +51,8 @@ class inviteControl extends BaseHomeControl{
 	 if($id<=0)die('请先登录会员后，再来这里操作哦。');
 	 $str_member="memberqr_".$id;
 	 $fileurl=BASE_UPLOAD_PATH.DS."shop".DS."member".DS.$str_member.".png";
-	 
-	 
-	 
+
+	 if(!file_exists($fileurl))die('文件不存在');
 	 ob_start(); 
 	 $filename=$fileurl;
 	 $date=date("Ymd-H:i:m");
