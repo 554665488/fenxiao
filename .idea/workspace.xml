@@ -1,502 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b229614-3f6d-4afc-9e8d-aaa8f8f4012e" name="Default" comment="注册验证码">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_0jiiehd0p7ck59cdspkv81ngf4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_0mo4nqdqpngc7a70ob7upje4l6" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_19tmu5mdondkh0qaf5k8lsihf7" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_1ns1hjg5d7lvf9ceaciomruur0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_20eufae6h3q0r4cplfsqn4egg0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_2mqbke0bfas6mclrs9catc4922" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_2otfbqgcn96cpf2lcl3sa0i0a3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_304efgm84h6mvgq5tmhbg0cqn0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_32p9mi22fev0icqkhug0aernd7" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_38a9cgf50cn9saao0uqf978jp2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_4ai3nhlstjsgdib40obnhoe527" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_4qi71rnbkpdvkg08mgkldnqia0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_4tpf8bmm5rgst9lvq36nh74ve5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_53e23m0poki7lgedfvsd512pr2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_5dlec5kf8g7g54h34hndle0170" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_650ll8hkvf763mvi5bfs4i7f61" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_6ah4cosi1or6k0fcabrf6g1cp2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_6bufi21tpj6f73ojlqk731fnc4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_6iidinc45l06sa7po3gd4lu2h1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_6le4a11i22af9d9oc1v0d8fb62" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_71pdid0pdvacg1t0cfrh88nlm5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_794rkdpoe6f9se4ebs9kq1krb5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_7tuaml9a0edt17vu5h08dq5ih0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_86ng178mrjofhq01r5elurdr96" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_8hvvd3eb6knvrkdmunpinmknd1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_8q0cig64q947rrnd2s1jck3tv4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_8utmu3i9gkau9sjrldup45q3v5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_9emq0fel2d2v99vknekvq25o91" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_a0e4i741epus9bske7to2tp8g5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_a1ighghsv32a91gb109vibq676" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_ab5l2qh1ct775fp75n3h1lcee0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_ad5ujhtmjjj68g1k9ufu2dhd93" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_afg7s55br6ooevdc0n9vsl0d07" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_aivt1lso5488ehj5811g80aep4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_au9219ri9u1gv7j3vrm0d8b553" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_b0nuer328f3g7k6998n5e16fb5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_b3rqsre2520t3k3g1o8sr22lg1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_bl8hqfnpo3veakslq6qcs5gs44" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_cdmkavh74vaofsn3pvmga3e9s5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_d6elbbscr0velg7tn0ckq624v4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_e3h6ef6t8n49vao86d969oqlp4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_ev9phdqbji8i2e28kos2radff4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_f0ltjouqh8qoccd32an3v0r0m6" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_fadfasn0u82l3orvbdrao27ie3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_fc3eq4l54eq95ke2vmgt28t0i2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_fq86ajpc3qskpn184bj94i6ij2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_g4qbjicc2rdj5n8h4i6ul4a566" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_g8q4fviigpqt9re2ql2usrbv90" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_gnr03uin9kjlvtv9scvfr7evi5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_htjsmchh48nmu7nofn96mv35t4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_ijbrm07bdi8ll2c9p1c9qhcjn7" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_j11csm7p70ndg369quk3tph1a0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_j4n9a9sunprq03teps7l57um07" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_j5b0gbhvaf5duncnnl3btj8kg6" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_jnnf4fvm1gpi1atpkm8g1k99e4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_jp7bbd0j4rqsabfmd331tr2ug1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_jq0ltdlgt3voatoifltatbns71" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_k0kodmqfne8976ane1neg24ol4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_k423drf42hqbi5r818p5ias485" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_k5qstjbs2ujeq6lbjs0t41u9n3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_k8fafi3u090sd08e99l2c5itb6" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_khtuniqg56nlku2942il9kos83" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_klrehag5nfp5l0rs9efnkm2dd0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_lh1rtjgt63l5hen3hg9u8ps8e4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_m58g4beikqss6rlb8o0bjvfr44" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_ma417e4knp752h1mdb93s9abt7" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_np0emqubsp8gu91ockl3n7pk85" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_odve7vp5j4og7oqi2e5l3dupd2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_ojonjvgi260qk0gi4kdqiblnn2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_qid0la836rbvfpg3ng6lnor2h3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_qmlbjokd38bfdl9v1oucck7do0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_r8pij6fpi3ki7motpjntp23j65" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_rf72mjn2dmkrb4j07ucmu9gu70" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_s4954hdu7g9jkkg8huctlopbf5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_seop8hu9ve0vu12ghs7rmq15g0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_sua835fiogarpraqo5hqkel5g2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_t3tivj2rt4b37h3km0iu4f5fv4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_t9utkaabfimsrltlh85us1ka40" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_tsa8lbclnbds7qlo4d73arh1n2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_tvadkopc6n57gk5udhcv3a47h4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_u9kesmh4gd5k7rbvs32bn17st3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_urdggvoctgqr0ss8oe093gv335" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_v774mej7hudbhtmcv2qqctts25" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_vo620uqklegf7c4sqnmule0h41" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/session/sess_vp4bha9kok2l57jh9urmfchgj3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/upload/qrcode/qrcode1568096861_5831.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/assets/noto_sans.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/assets/open_sans.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/assets/symfony.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/tests/qrcodes/hello_world.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/doc/manual.org" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/doc/sdk_qq.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/Module.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/autoload_classmap.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/autoload_function.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/autoload_register.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Common/AbstractEnum.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Common/BitArray.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Common/BitMatrix.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Common/BitUtils.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Common/CharacterSetEci.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Common/EcBlock.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Common/EcBlocks.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Common/ErrorCorrectionLevel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Common/FormatInformation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Common/Mode.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Common/ReedSolomonCodec.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Common/Version.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Encoder/BlockPair.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Encoder/ByteMatrix.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Encoder/Encoder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Encoder/MaskUtil.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Encoder/MatrixUtil.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Encoder/QrCode.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Exception/ExceptionInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Exception/InvalidArgumentException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Exception/OutOfBoundsException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Exception/RuntimeException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Exception/UnexpectedValueException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Exception/WriterException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Renderer/Color/Cmyk.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Renderer/Color/ColorInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Renderer/Color/Gray.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Renderer/Color/Rgb.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Renderer/Image/AbstractRenderer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Renderer/Image/Decorator/DecoratorInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Renderer/Image/Decorator/FinderPattern.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Renderer/Image/Eps.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Renderer/Image/Png.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Renderer/Image/RendererInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Renderer/Image/Svg.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Renderer/RendererInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Renderer/Text/Html.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Renderer/Text/Plain.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/src/BaconQrCode/Writer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/tests/BaconQrCode/Common/BitArrayTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/tests/BaconQrCode/Common/BitMatrixTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/tests/BaconQrCode/Common/BitUtilsTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/tests/BaconQrCode/Common/ErrorCorrectionLevelTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/tests/BaconQrCode/Common/FormatInformationTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/tests/BaconQrCode/Common/ModeTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/tests/BaconQrCode/Common/ReedSolomonCodecTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/tests/BaconQrCode/Common/VersionTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/tests/BaconQrCode/Encoder/EncoderTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/tests/BaconQrCode/Encoder/MaskUtilTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/tests/BaconQrCode/Encoder/MatrixUtilTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/tests/BaconQrCode/Renderer/Text/HtmlTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/tests/BaconQrCode/Renderer/Text/TextTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/tests/bootstrap.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/tests/phpunit.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/.vscode/temp.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/phpunit.xml.dist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Bundle/QrCodeBundle/Controller/QrCodeController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Bundle/QrCodeBundle/DependencyInjection/Compiler/WriterRegistryCompilerPass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Bundle/QrCodeBundle/DependencyInjection/Configuration.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Bundle/QrCodeBundle/DependencyInjection/EndroidQrCodeExtension.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Bundle/QrCodeBundle/EndroidQrCodeBundle.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Bundle/QrCodeBundle/Resources/config/routing.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Bundle/QrCodeBundle/Resources/config/services.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Bundle/QrCodeBundle/Resources/views/QrCode/twigFunctions.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/ErrorCorrectionLevel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Exception/InvalidPathException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Exception/InvalidWriterException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Exception/MissingFunctionException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Exception/QrCodeException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Exception/UnsupportedExtensionException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Exception/ValidationException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Factory/QrCodeFactory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/LabelAlignment.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/QrCode.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/QrCodeInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/StaticWriterRegistry.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Twig/Extension/QrCodeExtension.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Writer/AbstractBaconWriter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Writer/AbstractWriter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Writer/BinaryWriter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Writer/DebugWriter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Writer/EpsWriter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Writer/PngWriter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Writer/SvgWriter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/Writer/WriterInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/WriterRegistry.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/src/WriterRegistryInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/tests/Bundle/Controller/QrCodeControllerTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/tests/Bundle/EndroidQrCodeBundleTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/tests/Bundle/app/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/tests/Bundle/app/AppKernel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/tests/Bundle/app/bootstrap.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/tests/Bundle/app/config/config.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/tests/Bundle/app/config/routing.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/endroid/qr-code/tests/QrCodeTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/UPGRADING.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Client.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/ClientInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/CookieJarInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/SetCookie.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/BadResponseException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/ClientException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/ConnectException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/GuzzleException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/SeekException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/ServerException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/TooManyRedirectsException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/TransferException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/CurlFactoryInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/CurlMultiHandler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/EasyHandle.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/MockHandler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/StreamHandler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/HandlerStack.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/MessageFormatter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Middleware.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Pool.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/RequestOptions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/RetryMiddleware.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/TransferStats.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/UriTemplate.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/functions_include.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/Makefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/AggregateException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/CancellationException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/Coroutine.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/EachPromise.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/FulfilledPromise.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/Promise.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/PromiseInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/PromisorInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/RejectedPromise.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/RejectionException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/TaskQueue.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/TaskQueueInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/functions_include.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/AppendStream.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/BufferStream.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/CachingStream.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/DroppingStream.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/FnStream.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/InflateStream.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/LazyOpenStream.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/LimitStream.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/MessageTrait.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/MultipartStream.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/NoSeekStream.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/PumpStream.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/Request.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/Response.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/Rfc7230.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/ServerRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/Stream.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/StreamDecoratorTrait.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/StreamWrapper.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/UploadedFile.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/Uri.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/UriNormalizer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/UriResolver.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/functions_include.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/Binarizer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/BinaryBitmap.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/ChecksumException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/FormatException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/GDLuminanceSource.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/IMagickLuminanceSource.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/LuminanceSource.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/NotFoundException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/PlanarYUVLuminanceSource.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/QrReader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/RGBLuminanceSource.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/Reader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/ReaderException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/Result.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/ResultPoint.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/AbstractEnum.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/BitArray.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/BitMatrix.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/BitSource.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/CharacterSetEci.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/DecoderResult.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/DefaultGridSampler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/DetectorResult.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/GlobalHistogramBinarizer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/GridSampler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/HybridBinarizer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/PerspectiveTransform.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/customFunctions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/detector/MathUtils.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/detector/MonochromeRectangleDetector.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/reedsolomon/GenericGF.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/reedsolomon/GenericGFPoly.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/reedsolomon/ReedSolomonDecoder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/common/reedsolomon/ReedSolomonException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/qrcode/QRCodeReader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/qrcode/decoder/BitMatrixParser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/qrcode/decoder/DataBlock.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/qrcode/decoder/DataMask.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/qrcode/decoder/DecodedBitStreamParser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/qrcode/decoder/Decoder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/qrcode/decoder/ErrorCorrectionLevel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/qrcode/decoder/FormatInformation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/qrcode/decoder/Mode.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/qrcode/decoder/Version.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/qrcode/detector/AlignmentPattern.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/qrcode/detector/AlignmentPatternFinder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/qrcode/detector/Detector.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/qrcode/detector/FinderPattern.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/qrcode/detector/FinderPatternFinder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/lib/qrcode/detector/FinderPatternInfo.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/phpunit.xml.dist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/tests/QrReaderTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder/tests/bootstrap.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/myclabs/php-enum/.gitattributes" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/myclabs/php-enum/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/myclabs/php-enum/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/myclabs/php-enum/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/myclabs/php-enum/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/myclabs/php-enum/src/Enum.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/psr/http-message/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/psr/http-message/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/psr/http-message/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/psr/http-message/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/psr/http-message/src/MessageInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/psr/http-message/src/RequestInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/psr/http-message/src/ResponseInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/psr/http-message/src/ServerRequestInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/psr/http-message/src/StreamInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/psr/http-message/src/UploadedFileInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/psr/http-message/src/UriInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/ralouphie/getallheaders/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/ralouphie/getallheaders/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/ralouphie/getallheaders/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/ralouphie/getallheaders/src/getallheaders.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Exception/AccessException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Exception/ExceptionInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Exception/InvalidArgumentException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Exception/InvalidOptionsException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Exception/MissingOptionsException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Exception/NoSuchOptionException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Exception/OptionDefinitionException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Exception/UndefinedOptionsException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Options.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/OptionsResolver.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/OptionsResolverInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Tests/LegacyOptionsResolverTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Tests/LegacyOptionsTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Tests/OptionsResolver2Dot6Test.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/phpunit.xml.dist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/polyfill-ctype/Ctype.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/polyfill-ctype/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/polyfill-ctype/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/polyfill-ctype/bootstrap.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/polyfill-ctype/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Exception/AccessException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Exception/ExceptionInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Exception/InvalidArgumentException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Exception/InvalidPropertyPathException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Exception/NoSuchIndexException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Exception/NoSuchPropertyException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Exception/OutOfBoundsException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Exception/RuntimeException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Exception/UnexpectedTypeException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/PropertyAccess.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/PropertyAccessor.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/PropertyAccessorBuilder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/PropertyAccessorInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/PropertyPath.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/PropertyPathBuilder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/PropertyPathInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/PropertyPathIterator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/PropertyPathIteratorInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/StringUtil.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/NonTraversableArrayObject.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/ReturnTyped.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/TestClass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/TestClassIsWritable.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/TestClassMagicCall.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/TestClassMagicGet.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/TestClassSetValue.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/Ticket5775Object.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/TraversableArrayObject.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/TypeHinted.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyAccessorArrayAccessTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyAccessorArrayObjectTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyAccessorArrayTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyAccessorBuilderTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyAccessorCollectionTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyAccessorNonTraversableArrayObjectTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyAccessorTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyAccessorTraversableArrayObjectTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyPathBuilderTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyPathTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/StringUtilTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/phpunit.xml.dist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/CONTRIBUTING.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/composer.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/doc/dev/code_formatter_eclipse.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/doc/manual_zh_CN.org" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/phpunit.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/Api/ApiFactory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/Api/FlowApi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/Api/SignApi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/Api/SmsApi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/Api/TplApi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/Api/UserApi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/Api/VoiceApi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/Api/VoidApi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/Api/YunpianApi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/Api/YunpianApiResult.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/Constant/Code.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/Constant/YunpianConstant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/Model/Result.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/Util/ApiUtil.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/YunpianClient.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/YunpianConf.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/YunpianException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/YunpianGuzzle.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/src/yunpian.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/tests/Api/FlowApiTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/tests/Api/SignApiTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/tests/Api/SmsApiTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/tests/Api/TplApiTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/tests/Api/UserApiTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/tests/Api/VocieApiTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/tests/Api/YunpianApiInit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/tests/YunpianClientTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/yunpian/yunpian-php-sdk/tests/YunpianConfTest.php" />
+    <list default="true" id="2b229614-3f6d-4afc-9e8d-aaa8f8f4012e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/33hao.php" afterPath="$PROJECT_DIR$/33hao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/model/member.model.php" afterPath="$PROJECT_DIR$/data/model/member.model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/control/login.php" afterPath="$PROJECT_DIR$/mobile/control/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/framework/function/function.php" afterPath="$PROJECT_DIR$/mobile/framework/function/function.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wap/js/tmpl/register.js" afterPath="$PROJECT_DIR$/wap/js/tmpl/register.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wap/tmpl/member/register.html" afterPath="$PROJECT_DIR$/wap/tmpl/member/register.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -560,14 +67,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="register.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wap/js/tmpl/register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+            <state relative-caret-position="436">
+              <caret line="71" column="35" lean-forward="true" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
               <folding>
                 <element signature="e#6906#7821#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -644,6 +161,7 @@
         <option value="$PROJECT_DIR$/wap/tmpl/member/register.html" />
         <option value="$PROJECT_DIR$/data/model/member.model.php" />
         <option value="$PROJECT_DIR$/wap/js/tmpl/register.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -696,30 +214,6 @@
               <item name="shop" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="data" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="data" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="upload" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="wap" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="wap" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="tmpl" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="wap" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="tmpl" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="member" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -763,7 +257,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567999502133</updated>
-      <workItem from="1567999503310" duration="39133000" />
+      <workItem from="1567999503310" duration="39331000" />
     </task>
     <task id="LOCAL-00001" summary="注册验证码">
       <created>1568081021597</created>
@@ -772,11 +266,18 @@
       <option name="project" value="LOCAL" />
       <updated>1568081021598</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="注册验证码完成">
+      <created>1568101230136</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1568101230136</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39133000" />
+    <option name="totallyTimeSpent" value="39331000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -829,7 +330,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="注册验证码" />
-    <option name="LAST_COMMIT_MESSAGE" value="注册验证码" />
+    <MESSAGE value="注册验证码完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="注册验证码完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1237,11 +739,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wap/js/tmpl/register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+        <state relative-caret-position="436">
+          <caret line="71" column="35" lean-forward="true" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
           <folding>
             <element signature="e#6906#7821#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
