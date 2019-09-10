@@ -2287,7 +2287,7 @@ function urlMicroshop($act = '', $op = '', $args = array()){
 }
 /**
  * 会员中心使用的URL链接函数，强制使用动态传参数模式
- * 
+ *
  * @param string $act control文件名
  * @param string $op op方法名
  * @param unknown $args URL其它参数
@@ -2296,7 +2296,7 @@ function urlMicroshop($act = '', $op = '', $args = array()){
 function urlMember($act = '', $op = '', $args = array()) {
     // 默认标志为不开启伪静态
     $rewrite_flag = false;
-    
+
     // 如果平台开启伪静态开关，并且为伪静态模块，修改标志为开启伪静态
     $rewrite_item = array(
             'article:show',
@@ -2451,4 +2451,9 @@ function getMemberTagimage($img) {
  */
 function getChainImage($image, $store_id) {
     return UPLOAD_SITE_URL.DS.ATTACH_CHAIN.DS.$store_id.DS.$image;
+}
+
+function dump($data){
+    echo '<pre>';
+    var_dump($data);
 }

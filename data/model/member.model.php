@@ -305,7 +305,6 @@ class memberModel extends Model {
      * 注册
      */
     public function register($register_info) {
-        var_dump($register_info);die;
         // 注册验证
         $obj_validate = new Validate();
         $obj_validate->validateparam = array(

@@ -39,7 +39,11 @@ $config['cache_open'] = false;
 //$config['redis']['slave']             = array();
 //$config['fullindexer']['open']      = false;
 //$config['fullindexer']['appname']   = '33hao';
-$config['debug']            = false;
+
+$config['redis']['port']        = 6379;
+$config['redis']['host']        = '127.0.0.1';
+
+$config['debug']            = 1;
 $config['url_model'] = false; //如果要启用伪静态，把false修改为true
 $config['subdomain_suffix'] = '';//如果要启用店铺二级域名，请填写不带www的域名，比如52pojie.cn
 //$config['session_type'] = 'redis';
