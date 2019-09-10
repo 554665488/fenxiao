@@ -9,9 +9,18 @@
 error_reporting(E_ALL & ~E_NOTICE);
 define('BASE_ROOT_PATH',str_replace('\\','/',dirname(__FILE__)));
 define('BASE_CORE_PATH',BASE_ROOT_PATH.'/core');
+define('BASE_VENDOR_PATH',BASE_ROOT_PATH.'/vendor');
 define('BASE_DATA_PATH',BASE_ROOT_PATH.'/data');
 define("BASE_UPLOAD_PATH", BASE_ROOT_PATH . "/data/upload");
 define("BASE_RESOURCE_PATH", BASE_ROOT_PATH . "/data/resource");
+//二维码图片存放地址
+define("BASE_QRCODE_PATH", BASE_ROOT_PATH . "/data/upload/qrcode");
+if(strpos($_SERVER['SERVER_PROTOCOL'],'HTTP/1.1') !== false){
+    define("BASE_QRCODE_URL", 'http://' . $_SERVER['HTTP_HOST'] . '/wap/tmpl/member/register.html');
+}else{
+    define("BASE_QRCODE_URL", 'https://' . $_SERVER['HTTP_HOST'] . '/wap/tmpl/member/register.html');
+}
+
 
 /**
  * 安装判断
@@ -251,6 +260,7 @@ if ($config['gzip'] == 1 && function_exists('ob_gzhandler') && $_GET['inajax'] !
 require_once(BASE_CORE_PATH.'/framework/libraries/queue.php');
 require_once(BASE_CORE_PATH.'/framework/function/core.php');
 require_once(BASE_CORE_PATH.'/framework/core/base.php');
+require_once(BASE_VENDOR_PATH.'/autoload.php');
 
 require_once(BASE_CORE_PATH.'/framework/function/goods.php');
 

@@ -1,0 +1,7 @@
+{
+    "require": {
+        "yunpian/yunpian-php-sdk": "1.0",
+        "endroid/qr-code": "2.5.1",
+        "myclabs/php-enum": "1.6.6"
+    }
+}

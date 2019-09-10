@@ -10,6 +10,8 @@
  */
 
 
+use Yunpian\Sdk\YunpianClient;
+
 defined('In33hao') or exit('Access Invalid!');
 
 class loginControl extends mobileHomeControl
@@ -42,6 +44,7 @@ class loginControl extends mobileHomeControl
             //登录生成token V5.3 同步登录
             $model_seller = Model('seller');
             $seller_info = $model_seller->getSellerInfo(array('member_id' => $member_info['member_id']));
+
             $sellerinfo = array();
             if ($seller_info) {
                 //读取店铺信息
@@ -137,14 +140,14 @@ class loginControl extends mobileHomeControl
         $invite_reward_id = '';
         $invite_reward_name = '';
 
-        if(empty($_POST['code'])) {
+        if (empty($_POST['code'])) {
             output_error('请输入验证码');
-        }else{
+        } else {
             $code = $_POST['code'];
             $redisConfig = C('redis');
             $redis = new Redis();
             $redis->connect($redisConfig['host'], $redisConfig['port']);
-            if(!$redis->exists('code_' . $_POST['phone']) or  $redis->get('code_' . $_POST['phone']) != $code){
+            if (!$redis->exists('code_' . $_POST['phone']) or $redis->get('code_' . $_POST['phone']) != $code) {
                 output_error('验证码错误');
             }
         }
@@ -191,8 +194,8 @@ class loginControl extends mobileHomeControl
         $register_info = array();
         $register_info['username'] = $_POST['username'];
         $register_info['member_truename'] = $_POST['username'];
-        $register_info['password'] = $_POST['phone'];
-        $register_info['password_confirm'] = $_POST['phone'];
+        $register_info['password'] = $_POST['password'];
+        $register_info['password_confirm'] = $_POST['password_confirm'];
         $register_info['paypassword'] = $_POST['phone'];
         $register_info['paypassword_confirm'] = $_POST['phone'];
         $register_info['mobile'] = $_POST['phone'];
@@ -222,16 +225,68 @@ class loginControl extends mobileHomeControl
      */
     public function sendMobileCodeOp()
     {
+        //验证手机号是否注册
+        if (!isset($_POST['phone']) && !preg_match('/^0?(13|15|17|18|14)[0-9]{9}$/i', $_POST['phone'])) output_error('请输入手机号');
+        $phone = $_POST['phone'];
+        $model_member = Model('member');
+        $recmember = $model_member->getMemberInfo(array('member_mobile' => $phone));
+
+        if (!empty($recmember)) output_error('该手机号已经被注册');
         $randCode = mt_rand(9000, 9999);
-        $redis = Cache::getInstance('redis');
-//        $result = $redis->set('code', $randCode);
-//        dump($result);
         $redisConfig = C('redis');
         $redis = new Redis();
         $redis->connect($redisConfig['host'], $redisConfig['port']);
-        $cacheResult = $redis->setex('code_' . $_POST['phone'], 120, $randCode);
-        if(!$cacheResult)output_error('发送失败');
+        $cacheResult = $redis->setex('code_' . $phone, 120, $randCode);
+        if (!$cacheResult) output_error('发送失败');
         output_data(array('mobileCode' => $randCode));
+
+//        //使用第三方云片发送验证码
+//        //初始化client,apikey作为所有请求的默认值
+//        $apikey = '51836dc35ccb5f034784bc2e2dbe5694';
+//        $clnt = Yunpian\Sdk\YunpianClient::create($apikey);
+//        $param = [YunpianClient::MOBILE => "$phone", YunpianClient::TEXT => '【云片网】您的验证码是'. $randCode];
+//        $r = $clnt->sms()->single_send($param);
+//        if ($r->isSucc()) {
+//            $redisConfig = C('redis');
+//            $redis = new Redis();
+//            $redis->connect($redisConfig['host'], $redisConfig['port']);
+//            $cacheResult = $redis->setex('code_' .$phone , 120, $randCode);
+//            if (!$cacheResult) output_error('发送失败');
+//            output_data(array('mobileCode' => $randCode));
+//        }else{
+//            output_error($r->getMsg());
+//        }
+
+
+//        $redis = Cache::getInstance('redis');
+//        $result = $redis->set('code', $randCode);
+//        dump($result);
+    }
+
+    /**
+     * 注册获取邀请人信息
+     */
+    public function getMemberInfoByMemberIdOp()
+    {
+        $member_id = $_POST['member_id'];
+        if (is_numeric($member_id)) {
+            $model_member = Model('member');
+            $condition['member_id'] = $member_id;
+            $invite_member_info = array();
+            $member_info = $model_member->getMemberInfo($condition, 'inviter_ids,member_name');
+            if (!empty($member_info)) {
+//                $inviter_ids = '';
+//                if(!empty($member_info['inviter_ids'])){
+//                    $inviter_ids = explode(',', trim($member_info['inviter_ids'], ','));
+//                }
+                $invite_member_info['nodemember'] = $member_info['member_name']; //节点人
+                $invite_member_info['recmember'] = $member_info['member_name'];
+                output_data($invite_member_info);
+            }else{
+                output_error('邀请人信息不存在');
+            }
+        }
+        $model_member = Model('member');
     }
 
     /**
@@ -347,4 +402,5 @@ class loginControl extends mobileHomeControl
             output_error($member_info['error']);
         }
     }
+
 }

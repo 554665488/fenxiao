@@ -107,3 +107,41 @@ function http_postdata($url, $postdata) {
 
     return @file_get_contents($url, false, $context);
 }
+
+/**
+ * 生成二维码
+ * @param string $data
+ * @param string $prefix
+ * @param string $suffix
+ * @param string $text
+ * @return bool|string 二维码路径
+ */
+function makeQrCode($data = '', $prefix = 'qrcode', $suffix = 'png', $text = '注册二维码'){
+    if ($data == '') return false;
+//    $font = BASE_VENDOR_PATH . '/endroid/qr-code/assets/noto_sans.otf';
+    $qrCode = new Endroid\QrCode\QrCode($data);
+    $qrCode->setSize(300);
+    $qrCode->setWriterByName($suffix);
+    $qrCode->setMargin(10);
+    $qrCode->setEncoding('UTF-8');
+//        $qrCode->setErrorCorrectionLevel(ErrorCorrectionLevel::HIGH);
+    $qrCode->setForegroundColor(['r' => 0, 'g' => 0, 'b' => 0, 'a' => 0]);
+    $qrCode->setBackgroundColor(['r' => 255, 'g' => 255, 'b' => 255, 'a' => 0]);
+//        $qrCode->setLabel('Scan the code', 16, $this->font);
+//    $qrCode->setLabel($text, 16, $font);
+//        $qrCode->setLogoPath($this->logoPath);
+    $qrCode->setLogoWidth(150);
+//        $qrCode->setRoundBlockSize(true);
+//        $qrCode->setValidateResult(false);
+    // Directly output the QR code
+    header('Content-Type: ' . $qrCode->getContentType());
+    //保存图片
+    $fileName = $prefix . time() .'_' .rand(10, 9999) . '.' . $suffix;
+    $saveQrcodeFile = BASE_QRCODE_PATH . '/' . $fileName;
+//        echo $qrCode->writeString();
+    // Save it to a file
+    $qrCode->writeFile($saveQrcodeFile);
+    // Create a response object
+//        $response = new QrCodeResponse($qrCode);
+    return '/data/upload/qrcode/' . $fileName;
+}
