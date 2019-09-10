@@ -59,7 +59,7 @@ class loginControl extends mobileHomeControl
             }
             $token = $this->_get_token($member_info['member_id'], $member_info['member_name'], $_POST['client']);
             if ($token) {
-                output_data(array('username' => $member_info['member_name'], 'userid' => $member_info['member_id'], 'key' => $token, 'sell' => $sellerinfo));
+                output_data(array('username' => $member_info['member_name'], 'userid' => $member_info['member_id'], 'key' => $token, 'member_mobile'=> $member_info['member_mobile'],'sell' => $sellerinfo));
             } else {
                 output_error('登录失败');
             }
@@ -147,7 +147,7 @@ class loginControl extends mobileHomeControl
             $redisConfig = C('redis');
             $redis = new Redis();
             $redis->connect($redisConfig['host'], $redisConfig['port']);
-            if (!$redis->exists('code_' . $_POST['phone']) or $redis->get('code_' . $_POST['phone']) != $code) {
+            if (!$redis->exists('register_code_' . $_POST['phone']) or $redis->get('register_code_' . $_POST['phone']) != $code) {
                 output_error('验证码错误');
             }
         }
@@ -232,32 +232,26 @@ class loginControl extends mobileHomeControl
         $recmember = $model_member->getMemberInfo(array('member_mobile' => $phone));
 
         if (!empty($recmember)) output_error('该手机号已经被注册');
-        $randCode = mt_rand(9000, 9999);
+        $randCode = mt_rand(1000, 9999);
         $redisConfig = C('redis');
         $redis = new Redis();
         $redis->connect($redisConfig['host'], $redisConfig['port']);
-        $cacheResult = $redis->setex('code_' . $phone, 120, $randCode);
-        if (!$cacheResult) output_error('发送失败');
-        output_data(array('mobileCode' => $randCode));
+        if(C('send_mobile_code_method') == 'test'){
+            $cacheResult = $redis->setex('register_code_' . $phone, 120, $randCode);
+            if (!$cacheResult) output_error('发送失败');
+            output_data(array('mobileCode' => $randCode));
+        }else{
+            //使用第三方云片发送验证码
+            $r = sendMobileCode($phone, $randCode);
+            if ($r->isSucc()) {
 
-//        //使用第三方云片发送验证码
-//        //初始化client,apikey作为所有请求的默认值
-//        $apikey = '51836dc35ccb5f034784bc2e2dbe5694';
-//        $clnt = Yunpian\Sdk\YunpianClient::create($apikey);
-//        $param = [YunpianClient::MOBILE => "$phone", YunpianClient::TEXT => '【云片网】您的验证码是'. $randCode];
-//        $r = $clnt->sms()->single_send($param);
-//        if ($r->isSucc()) {
-//            $redisConfig = C('redis');
-//            $redis = new Redis();
-//            $redis->connect($redisConfig['host'], $redisConfig['port']);
-//            $cacheResult = $redis->setex('code_' .$phone , 120, $randCode);
-//            if (!$cacheResult) output_error('发送失败');
-//            output_data(array('mobileCode' => $randCode));
-//        }else{
-//            output_error($r->getMsg());
-//        }
-
-
+                $cacheResult = $redis->setex('register_code_' . $phone, 120, $randCode);
+                if (!$cacheResult) output_error('发送失败');
+                output_data(array('mobileCode' => $randCode));
+            } else {
+                output_error($r->getMsg());
+            }
+        }
 //        $redis = Cache::getInstance('redis');
 //        $result = $redis->set('code', $randCode);
 //        dump($result);

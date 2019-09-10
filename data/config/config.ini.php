@@ -59,4 +59,6 @@ $config['https'] = false;
 $config['store_limit'] = 0;
 //发商品数量限制，0为不限
 $config['sg_goods_limit'] = 0;
+//发送短信验证码方式
+$config['send_mobile_code_method'] = 'test';
 return $config;

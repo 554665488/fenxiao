@@ -11,14 +11,15 @@
  */
 defined('In33hao') or exit('Access Invalid!');
 
-function output_data($datas, $extend_data = array(), $error = false) {
+function output_data($datas, $extend_data = array(), $error = false)
+{
     $data = array();
     $data['code'] = 200;
-    if($error) {
+    if ($error) {
         $data['code'] = 400;
     }
 
-    if(!empty($extend_data)) {
+    if (!empty($extend_data)) {
         $data = array_merge($data, $extend_data);
     }
 
@@ -33,26 +34,30 @@ function output_data($datas, $extend_data = array(), $error = false) {
     }
 
     if (!empty($_GET['callback'])) {
-        echo $_GET['callback'].'('.json_encode($data, $jsonFlag).')';die;
+        echo $_GET['callback'] . '(' . json_encode($data, $jsonFlag) . ')';
+        die;
     } else {
         header("Access-Control-Allow-Origin:*");
-        echo json_encode($data, $jsonFlag);die;
+        echo json_encode($data, $jsonFlag);
+        die;
     }
 }
 
-function output_error($message, $extend_data = array()) {
+function output_error($message, $extend_data = array())
+{
     $datas = array('error' => $message);
     output_data($datas, $extend_data, true);
 }
 
-function mobile_page($page_count) {
+function mobile_page($page_count)
+{
     //输出是否有下一页
     $extend_data = array();
     $current_page = intval($_GET['curpage']);
-    if($current_page <= 0) {
+    if ($current_page <= 0) {
         $current_page = 1;
     }
-    if($current_page >= $page_count) {
+    if ($current_page >= $page_count) {
         $extend_data['hasmore'] = false;
     } else {
         $extend_data['hasmore'] = true;
@@ -61,9 +66,10 @@ function mobile_page($page_count) {
     return $extend_data;
 }
 
-function get_server_ip() {
+function get_server_ip()
+{
     if (isset($_SERVER)) {
-        if($_SERVER['SERVER_ADDR']) {
+        if ($_SERVER['SERVER_ADDR']) {
             $server_ip = $_SERVER['SERVER_ADDR'];
         } else {
             $server_ip = $_SERVER['LOCAL_ADDR'];
@@ -74,38 +80,56 @@ function get_server_ip() {
     return $server_ip;
 }
 
-function http_get($url) {
+function http_get($url)
+{
     return file_get_contents($url);
 }
 
-function http_post($url, $param) {
+function http_post($url, $param)
+{
     $postdata = http_build_query($param);
 
     $opts = array('http' =>
         array(
-            'method'  => 'POST',
-            'header'  => 'Content-type: application/x-www-form-urlencoded',
+            'method' => 'POST',
+            'header' => 'Content-type: application/x-www-form-urlencoded',
             'content' => $postdata
         )
     );
 
-    $context  = stream_context_create($opts);
+    $context = stream_context_create($opts);
 
     return @file_get_contents($url, false, $context);
 }
 
-function http_postdata($url, $postdata) {
+function http_postdata($url, $postdata)
+{
     $opts = array('http' =>
         array(
-            'method'  => 'POST',
-            'header'  => 'Content-type: application/x-www-form-urlencoded',
+            'method' => 'POST',
+            'header' => 'Content-type: application/x-www-form-urlencoded',
             'content' => $postdata
         )
     );
 
-    $context  = stream_context_create($opts);
+    $context = stream_context_create($opts);
 
     return @file_get_contents($url, false, $context);
+}
+
+/**
+ * 发送短信验证码
+ * @param $phone
+ * @param $randCode
+ * @return mixed
+ */
+function sendMobileCode($phone, $randCode)
+{
+    $apikey = '51836dc35ccb5f034784bc2e2dbe5694';
+    $clnt = Yunpian\Sdk\YunpianClient::create($apikey);
+    $param = [Yunpian\Sdk\YunpianClient::MOBILE => "$phone", Yunpian\Sdk\YunpianClient::TEXT => '【云片网】您的验证码是' . $randCode];
+    $r = $clnt->sms()->single_send($param);
+    return $r;
 }
 
 /**
@@ -116,7 +140,8 @@ function http_postdata($url, $postdata) {
  * @param string $text
  * @return bool|string 二维码路径
  */
-function makeQrCode($data = '', $prefix = 'qrcode', $suffix = 'png', $text = '注册二维码'){
+function makeQrCode($data = '', $prefix = 'qrcode', $suffix = 'png', $text = '注册二维码')
+{
     if ($data == '') return false;
 //    $font = BASE_VENDOR_PATH . '/endroid/qr-code/assets/noto_sans.otf';
     $qrCode = new Endroid\QrCode\QrCode($data);
@@ -136,7 +161,7 @@ function makeQrCode($data = '', $prefix = 'qrcode', $suffix = 'png', $text = '�
     // Directly output the QR code
     header('Content-Type: ' . $qrCode->getContentType());
     //保存图片
-    $fileName = $prefix . time() .'_' .rand(10, 9999) . '.' . $suffix;
+    $fileName = $prefix . time() . '_' . rand(10, 9999) . '.' . $suffix;
     $saveQrcodeFile = BASE_QRCODE_PATH . '/' . $fileName;
 //        echo $qrCode->writeString();
     // Save it to a file
@@ -145,3 +170,4 @@ function makeQrCode($data = '', $prefix = 'qrcode', $suffix = 'png', $text = '�
 //        $response = new QrCodeResponse($qrCode);
     return '/data/upload/qrcode/' . $fileName;
 }
+

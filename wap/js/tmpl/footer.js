@@ -55,6 +55,7 @@ $(function (){
 					delCookie('username');
 					delCookie('key');
 					delCookie('cart_count');
+					delCookie('member_mobile');
 					location.href = WapSiteUrl;
 				}
 			}
