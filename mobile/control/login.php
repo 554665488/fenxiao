@@ -266,28 +266,27 @@ class loginControl extends mobileHomeControl
     /**
      * 注册获取邀请人信息
      */
-    public function getMemberInfoByMemberIdOp()
-    {
-        $member_id = $_POST['member_id'];
-        if (is_numeric($member_id)) {
-            $model_member = Model('member');
-            $condition['member_id'] = $member_id;
-            $invite_member_info = array();
-            $member_info = $model_member->getMemberInfo($condition, 'inviter_ids,member_name');
-            if (!empty($member_info)) {
-//                $inviter_ids = '';
-//                if(!empty($member_info['inviter_ids'])){
-//                    $inviter_ids = explode(',', trim($member_info['inviter_ids'], ','));
-//                }
-                $invite_member_info['nodemember'] = $member_info['member_name']; //节点人
-                $invite_member_info['recmember'] = $member_info['member_name'];
-                output_data($invite_member_info);
-            }else{
-                output_error('邀请人信息不存在');
-            }
-        }
-        $model_member = Model('member');
-    }
+//    public function getMemberInfoByMemberIdOp()
+//    {
+//        $member_name = $_POST['name'];
+//        if (!empty($member_name)) {
+//            $model_member = Model('member');
+//            $condition['member_name'] = $member_name;
+//            $invite_member_info = array();
+//            $member_info = $model_member->getMemberInfo($condition, 'inviter_ids,member_name');
+//            if (!empty($member_info)) {
+////                $inviter_ids = '';
+////                if(!empty($member_info['inviter_ids'])){
+////                    $inviter_ids = explode(',', trim($member_info['inviter_ids'], ','));
+////                }
+//                $invite_member_info['nodemember'] = $member_info['member_name']; //节点人
+//                $invite_member_info['recmember'] = $member_info['member_name'];
+//                output_data($invite_member_info);
+//            }else{
+//                output_error('邀请人信息不存在');
+//            }
+//        }
+//    }
 
     /**
      * 微信注册

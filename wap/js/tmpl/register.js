@@ -205,34 +205,34 @@ $(function () {
     }
 
     //处理扫描二维码的注册方式
-    function matchUrlMemberId() {
-        var member_id = getUrlParam('member_id');
-        if (member_id > 0) {
-            //获取邀请人的基本信息
-            $.ajax({
-                url: ApiUrl + "/index.php?act=login&op=getMemberInfoByMemberId",
-                dataType: 'json',
-                type: 'post',
-                data: {member_id: member_id},
-                cache: false,
-                async: true,
-                success: function (json) {
-
-                    if (json.code == 200) {  //no-click
-                        $('#recmember').val(json.datas.recmember);
-                        $('#nodemember').val(json.datas.nodemember);
-                    }
-                },
-                error: function () {
-                    layer.open({
-                        content: '网络错误,请稍后再试'
-                        , skin: 'msg'
-                        , time: 2
-                    });
-                }
-            });
-        }
-    }
-
-    matchUrlMemberId();
+    // function matchUrlMemberId() {
+    //     var member_name = getUrlParam('name');
+    //     if (member_name != '') {
+    //         // 获取邀请人的基本信息
+    //         $('#recmember').val(member_name);
+    //         $('#nodemember').val(member_name);
+    //         $.ajax({
+    //             url: ApiUrl + "/index.php?act=login&op=getMemberInfoByMemberId",
+    //             dataType: 'json',
+    //             type: 'post',
+    //             data: {name: member_name},
+    //             cache: false,
+    //             async: true,
+    //             success: function (json) {
+    //                 if (json.code == 200) {  //no-click
+    //                     $('#recmember').val(json.datas.recmember);
+    //                     $('#nodemember').val(json.datas.nodemember);
+    //                 }
+    //             },
+    //             error: function () {
+    //                 layer.open({
+    //                     content: '网络错误,请稍后再试'
+    //                     , skin: 'msg'
+    //                     , time: 2
+    //                 });
+    //             }
+    //         });
+    //     }
+    // }
+    // matchUrlMemberId();
 });

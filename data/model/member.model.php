@@ -312,7 +312,7 @@ class memberModel extends Model
             );
             //制作二维码
             if (empty($member_info['qr_code'])) {
-                $qrCodePth = makeQrCode(BASE_QRCODE_URL . '?member_id=' . $member_info['member_id']);
+                $qrCodePth = makeQrCode(BASE_QRCODE_URL . '?name=' . $member_info['member_name']);
                 $update_info['qr_code'] = $qrCodePth;
             }
             $this->editMember(array('member_id' => $member_info['member_id']), $update_info);
