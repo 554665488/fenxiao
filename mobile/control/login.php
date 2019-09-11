@@ -237,7 +237,7 @@ class loginControl extends mobileHomeControl
         $redis = new Redis();
         $redis->connect($redisConfig['host'], $redisConfig['port']);
         if(C('send_mobile_code_method') == 'test'){
-            $cacheResult = $redis->setex('register_code_' . $phone, 120, $randCode);
+            $cacheResult = $redis->setex('register_code_' . $phone, C('send_mobile_code_ttl'), $randCode);
             if (!$cacheResult) output_error('发送失败');
             output_data(array('mobileCode' => $randCode));
         }else{
@@ -245,7 +245,7 @@ class loginControl extends mobileHomeControl
             $r = sendMobileCode($phone, $randCode);
             if ($r->isSucc()) {
 
-                $cacheResult = $redis->setex('register_code_' . $phone, 120, $randCode);
+                $cacheResult = $redis->setex('register_code_' . $phone, C('send_mobile_code_ttl'), $randCode);
                 if (!$cacheResult) output_error('发送失败');
                 output_data(array('mobileCode' => $randCode));
             } else {

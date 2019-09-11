@@ -449,14 +449,14 @@ class member_accountControl extends mobileMemberControl
             $randCode = mt_rand(1000, 9999);
             //测试发送
             if (C('send_mobile_code_method') == 'test') {
-                $cacheResult = $redis->setex('modify_password_code_' . $phone, 120, $randCode);
+                $cacheResult = $redis->setex('modify_password_code_' . $phone, C('send_mobile_code_ttl'), $randCode);
                 if (!$cacheResult) output_error('发送失败');
                 output_data(array('mobileCode' => $randCode));
             }else{
                 //使用第三方云片发送验证码
                 $r = sendMobileCode($phone, $randCode);
                 if ($r->isSucc()) {
-                    $cacheResult = $redis->setex('modify_password_code_' . $phone, 120, $randCode);
+                    $cacheResult = $redis->setex('modify_password_code_' . $phone, C('send_mobile_code_ttl'), $randCode);
                     if (!$cacheResult) output_error('发送失败');
                     output_data(array('mobileCode' => $randCode));
                 } else {
@@ -499,6 +499,39 @@ class member_accountControl extends mobileMemberControl
      */
     public function modify_paypassword_witholdOp()
     {
+        //先获取短信验证码
+        $redisConfig = C('redis');
+        $redis = new Redis();
+        $redis->connect($redisConfig['host'], $redisConfig['port']);
+        if (isset($_POST['phone']) and preg_match('/^0?(13|15|17|18|14)[0-9]{9}$/i', $_POST['phone'])) {
+            $phone = $_POST['phone'];
+            $randCode = mt_rand(1000, 9999);
+            //测试发送
+            if (C('send_mobile_code_method') == 'test') {
+                $cacheResult = $redis->setex('modify_pay_password_code_' . $phone, C('send_mobile_code_ttl'), $randCode);
+                if (!$cacheResult) output_error('发送失败');
+                output_data(array('mobileCode' => $randCode));
+            }else{
+                //使用第三方云片发送验证码
+                $r = sendMobileCode($phone, $randCode);
+                if ($r->isSucc()) {
+                    $cacheResult = $redis->setex('modify_pay_password_code_' . $phone, C('send_mobile_code_ttl'), $randCode);
+                    if (!$cacheResult) output_error('发送失败');
+                    output_data(array('mobileCode' => $randCode));
+                } else {
+                    output_error($r->getMsg());
+                }
+            }
+        }
+        //验证短信验证码
+        if (empty($_POST['code'])) {
+            output_error('请输入验证码');
+        } else {
+            $code = $_POST['code'];
+            if (!$redis->exists('modify_pay_password_code_' . $_POST['member_mobile']) or $redis->get('modify_pay_password_code_' . $_POST['member_mobile']) != $code) {
+                output_error('验证码错误');
+            }
+        }
 
         if (!$_POST['password'] || !$_POST['passwordold'] || !$_POST['password1'] || $_POST['password'] != $_POST['password1']) {
             output_error('提交数据错误');

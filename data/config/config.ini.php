@@ -61,4 +61,6 @@ $config['store_limit'] = 0;
 $config['sg_goods_limit'] = 0;
 //发送短信验证码方式
 $config['send_mobile_code_method'] = 'test';
+//验证码缓存的时间
+$config['send_mobile_code_ttl'] = 120;
 return $config;
