@@ -66,7 +66,7 @@ class goodsControl extends mobileHomeControl{
         if(!empty($_GET['type']) && $_GET['type'] == 'forasale') {
           $condition['z_goods_type'] = 2;
         } else if(!empty($_GET['type']) && $_GET['type'] == 'forsale') {
-          $condition['z_goods_type'] = 1;
+          $condition['z_goods_type'] = 1; //优惠产品 折扣区的产品
         } else {
           $condition['z_goods_type'] = 0;
         }
@@ -100,12 +100,14 @@ class goodsControl extends mobileHomeControl{
         $indexer_searcharr['price_to'] = $price_to;
 
         //优先从全文索引库里查找
+
         list($goods_list,$indexer_count) = $model_search->indexerSearch($indexer_searcharr,$this->page);
         if (!is_null($goods_list)) {
             $goods_list = array_values($goods_list);
             pagecmd('setEachNum',$this->page);
             pagecmd('setTotalNum',$indexer_count);
         } else {
+            //todo start
             //查询消费者保障服务
             $contract_item = array();
             if (C('contract_allow') == 1) {
@@ -253,7 +255,7 @@ class goodsControl extends mobileHomeControl{
         if ($goods_detail['is_book']) {
             output_error('预订商品不支持手机端显示');
         }
-
+        //获得消费者保障服务
         $goods_list = $model_goods->getGoodsContract(array(0=>$goods_detail['goods_info']));
         $goods_detail['goods_info'] = $goods_list[0];
 
@@ -263,8 +265,11 @@ class goodsControl extends mobileHomeControl{
         foreach($hot_sales as $value) {
             $goodsid_array[] = $value['goods_id'];
         }
+        //手机专享套餐表
         $sole_array = Model('p_sole')->getSoleGoodsList(array('goods_id' => array('in', $goodsid_array)));
         $sole_array = array_under_reset($sole_array, 'goods_id');
+
+        //推荐商品
         $goods_commend_list = array();
         foreach($hot_sales as $value) {
             $goods_commend = array();
@@ -278,10 +283,10 @@ class goodsControl extends mobileHomeControl{
             $goods_commend['goods_image_url'] = cthumb($value['goods_image'], 240);
             $goods_commend_list[] = $goods_commend;
         }
-
         $goods_detail['goods_commend_list'] = $goods_commend_list;
-        $store_info = Model('store')->getStoreInfoByID($goods_detail['goods_info']['store_id']);
 
+        //店铺信息
+        $store_info = Model('store')->getStoreInfoByID($goods_detail['goods_info']['store_id']);
         $goods_detail['store_info']['store_id'] = $store_info['store_id'];
         $goods_detail['store_info']['store_name'] = $store_info['store_name'];
         $goods_detail['store_info']['member_id'] = $store_info['member_id'];
@@ -313,12 +318,14 @@ class goodsControl extends mobileHomeControl{
 
 
         // 如果已登录 判断该商品是否已被收藏&&添加浏览记录
+
         if ($member_id = $this->getMemberIdIfExists()) {
             $c = (int) Model('favorites')->getGoodsFavoritesCountByGoodsId($goods_id, $member_id);
             $goods_detail['is_favorate'] = $c > 0;
-
+            //缓存用户查看的商品信息
             QueueClient::push('addViewedGoods', array('goods_id'=>$goods_id,'member_id'=>$member_id));
 
+            //是否为虚拟商品 1是，0否
             if (!$goods_detail['goods_info']['is_virtual']) {
                 // 店铺优惠券
                 $condition = array();
@@ -326,6 +333,7 @@ class goodsControl extends mobileHomeControl{
                 $condition['voucher_t_state'] = 1;
                 $condition['voucher_t_end_date'] = array('gt', time());
                 $condition['voucher_t_store_id'] = array('in', $store_info['store_id']);
+                //查询优惠券
                 $voucher_template = Model('voucher')->getVoucherTemplateList($condition);
                 if (!empty($voucher_template)) {
                     foreach ($voucher_template as $val) {

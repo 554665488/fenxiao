@@ -32,11 +32,12 @@ var password,rcb_pay,pd_pay,payment_code;
                  $('#wrapperPaymentPassword').find('.input-box-help').show();
              }
              if(parseFloat(result.datas.pay_info.member_available_pd) < parseFloat(result.datas.pay_info.pay_amount)) {
+
                $('#payInfo').html('，预存款不足，请'+ '<a href="'+WapSiteUrl + '/tmpl/member/recharge.html">充值</a>');
              }
              // 支付密码标记
              var _use_password = false;
-             if (parseFloat(result.datas.pay_info.payed_amount) <= 0) {
+             if (parseFloat(result.datas.pay_info.payed_amount) <= 0) { //支付金额小于等于 0
                  if (parseFloat(result.datas.pay_info.member_available_pd) == 0 && parseFloat(result.datas.pay_info.member_available_rcb) == 0) {
                      $('#internalPay').hide();
                  } else {
@@ -61,11 +62,12 @@ var password,rcb_pay,pd_pay,payment_code;
                  $('#internalPay').hide();
              }
 
-             password = '';
+             password = ''; //todo Bug #115
              $('#paymentPassword').on('change', function(){
                  password = $(this).val();
              });
 
+             //使用充值卡余额付款
              rcb_pay = 0;
              $('#useRCBpay').click(function(){
                  if ($(this).prop('checked')) {
@@ -84,12 +86,14 @@ var password,rcb_pay,pd_pay,payment_code;
                  }
              });
 
+             //使用预存款支付
              pd_pay = 0;
              $('#usePDpy').click(function(){
                  if ($(this).prop('checked')) {
                      _use_password = true;
                      $('#wrapperPaymentPassword').show();
                      pd_pay = 1;
+                     payment_code = 'pd_pay'; //支付方式代号
                  } else {
                      if (rcb_pay == 1) {
                          _use_password = true;
@@ -102,6 +106,7 @@ var password,rcb_pay,pd_pay,payment_code;
                  }
              });
 
+             //根据客户端内核 自动选择支付方式
              payment_code = '';
              if (!$.isEmptyObject(result.datas.pay_info.payment_list)) {
                  var readytoWXPay = false;
@@ -141,6 +146,7 @@ var password,rcb_pay,pd_pay,payment_code;
              });
 
              $('#toPay').click(function(){
+
                if(parseFloat(result.datas.pay_info.member_available_pd) < parseFloat(result.datas.pay_info.pay_amount)) {
                  window.location.href = WapSiteUrl + '/tmpl/member/recharge.html';
                  return;
@@ -156,11 +162,12 @@ var password,rcb_pay,pd_pay,payment_code;
                      return false;
                  }
                  if (_use_password) {
+                     password = $("#paymentPassword").val();
                      // 验证支付密码是否填写
                      if (password == '') {
                          $.sDialog({
                              skin:"red",
-                             content:'请填写支付密码',
+                             content:'请填写支付密码', //TODO 下单直接支付,获取密码有问题
                              okBtn:false,
                              cancelBtn:false
                          });
@@ -182,6 +189,7 @@ var password,rcb_pay,pd_pay,payment_code;
                                  });
                                  return false;
                              }
+
                              goToPayment(pay_sn,act == 'member_buy' ? 'pay_new' : 'vr_pay_new');
                          }
                      });
@@ -194,5 +202,24 @@ var password,rcb_pay,pd_pay,payment_code;
  }
 
  function goToPayment(pay_sn,op) {
-     location.href = ApiUrl+'/index.php?act=member_payment&op='+op+'&key=' + key + '&pay_sn=' + pay_sn + '&password=' + password + '&rcb_pay=' + rcb_pay + '&pd_pay=' + pd_pay + '&payment_code=' + payment_code;
+     //location.href =
+     // ApiUrl+'/index.php?act=member_payment&op='+op+'&key=' + key + '&pay_sn=' + pay_sn + '&password=' + password + '&rcb_pay=' + rcb_pay + '&pd_pay=' + pd_pay + '&payment_code=' + payment_code;
+     console.log(op);
+     $.ajax({
+         type:'get',
+         url:ApiUrl+'/index.php?act=member_payment&op='+op+'&key=' + key + '&pay_sn=' + pay_sn + '&password=' + password + '&rcb_pay=' + rcb_pay + '&pd_pay=' + pd_pay + '&payment_code=' + payment_code,
+         dataType:'json',
+         data:{},
+         success:function(result){
+             if (result.datas.error) {
+                 $.sDialog({
+                     skin:"red",
+                     content:result.datas.error,
+                     okBtn:false,
+                     cancelBtn:false
+                 });
+                 return false;
+             }
+         }
+     });
  }

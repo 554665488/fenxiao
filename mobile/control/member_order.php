@@ -408,7 +408,7 @@ class member_orderControl extends mobileMemberControl {
 	  $model_goods = Model('goods');
       $condition['order_id'] = $_POST['order_id'];
       $condition['buyer_id'] = $this->member_info['member_id'];
-      $condition['sale_state'] = 0;
+      $condition['sale_state'] = 0; //未挂卖
       $condition['is_wholesale'] = 1;
       $order_info = $model_order->getOrderInfo($condition);
       if (empty($order_info) || !in_array($order_info['order_state'],array(ORDER_STATE_PAY))) {
@@ -424,7 +424,7 @@ class member_orderControl extends mobileMemberControl {
         $saleday = intval($list_setting['sale_days']);
       }
 	  
-      if($_POST['type'] == 'jiaoge') {
+      if($_POST['type'] == 'jiaoyi') {
 
 		try {
             $model_order->beginTransaction();
@@ -437,6 +437,7 @@ class member_orderControl extends mobileMemberControl {
 			$good_num = intval($order_goods_list[0]['goods_num']);
 			$sale_goods_common_id = $order_goods_list[0]['sale_goods_common_id'];
 
+			//订单的扩展信息
 			$goods_common_detail = $model_goods->getGoodsCommonInfo(array('goods_commonid' => $sale_goods_common_id));
 			if(empty($goods_common_detail)) {
 				throw new Exception('数据缺失，操作失败');
@@ -444,30 +445,40 @@ class member_orderControl extends mobileMemberControl {
 			if(count($order_goods_list) > 1) {
 				throw new Exception('商品太多');
 			}
-			
+
+			//显示购买后交易时间
 			$paytime = strtotime(date('Y-m-d', $order_info['payment_time'])) + $saleday * 24 * 3600;
 			$nowtime = strtotime(date('Y-m-d'));
 			if ($nowtime < $paytime) {
-				throw new Exception('您可以在'.date('Y-m-d', $paytime).'以后进行交易');
+//				throw new Exception('您可以在'.date('Y-m-d', $paytime).'以后进行交易');
 			}
+
+			//需要支付代售费
 			if($this->member_info['available_predeposit'] < $daishoufee * $good_num) {
 				throw new Exception('可用余额不足，无法扣除代售费'.ncPriceFormat($daishoufee * $good_num));
 			}
-			$sale_no = 1;
 
+			$sale_no = 1; //sale_state //挂卖状态，0，未挂卖，1挂卖中，20挂卖完成
+            //查询已经挂售的商品信息订单
 			$order_info2 = $model_order->getOrderInfo(array('is_wholesale' => 1, 'sale_state' => array('egt', 1), 'sale_no' => array('egt', 0),'sale_goods_common_id' => $sale_goods_common_id),  
 				array(), 'sale_no,sale_num', 'sale_no desc');
 			if(!empty($order_info2)) {
-				$sale_no = $order_info2['sale_no'] + $order_info2['sale_num'];
+				$sale_no = $order_info2['sale_no'] + $order_info2['sale_num'];//销售编号+上销售数量
 			}
+
+            //限制一天只能挂卖一次
 			$count = $model_order->getOrderCount(array('is_wholesale' => 1, 'sale_state' => array('egt', 1), 'sale_submit_date' => strtotime(date('Y-m-d')), 'buyer_id' => $this->member_info['member_id']));
 			if ($count > 0) {
 				throw new Exception('今天已经挂卖过');
 			}
+
+			//查询当前会员已经挂售的数量
 			$count = $model_order->getOrderCount(array('is_wholesale' => 1, 'sale_state' => array('egt', 1), 'buyer_id' => $this->member_info['member_id']));
 			$count = intval($count) + 1;
+
+			//用户选择交易动作 修改订单的信息
 			$up = array('sale_state' => 1, 'sale_date' => time(), 'sale_submit_date' => time(), 'sale_no' => $sale_no, 'sale_num' => $good_num, 'sale_goods_common_id' => $sale_goods_common_id, 'circle_num' => $count);
-			if($goods_common_detail['sale_no'] == 0) {
+            if($goods_common_detail['sale_no'] == 0) {
 				$model_goods->table('goods_common')->where(array('goods_commonid' => $sale_goods_common_id))
 					->update(array('sale_no' => $sale_no));
 			}
@@ -485,7 +496,7 @@ class member_orderControl extends mobileMemberControl {
             output_error($e->getMessage());
         }
 	  } else {
-		$up = array('is_wholesale' => 0);
+		$up = array('is_wholesale' => 0);//0
 		$model_order->editOrder($up, $condition);
 	  }
       output_data("提交成功!");

@@ -44,6 +44,16 @@
     <li><a href="tmpl/member/my_submit_form.html"><span><i></i></span>
       <p>易货区</p>
       </a></li>
+	  <li><a href="tmpl/member/my_submit_form.html"><span><i></i></span>
+		  <p>新手特权</p>
+	  </a></li>
+	  <li><a href="tmpl/member/my_submit_form.html"><span><i></i></span>
+		  <p>预约消费</p>
+	  </a></li>
+	  <li><a href="tmpl/member/my_submit_form.html"><span><i></i></span>
+		  <p>在线支付</p>
+	  </a></li>
+
 
   </ul>
 </div>
@@ -253,14 +263,12 @@
 <script>
 
 	$(function () {
-		var key = getCookie('key');	console.log(key);
-
-
+		var key = getCookie('key');
 		//检查每天第一次登录后进入首页
-
-		if(key){
-		}
-
+        if (!key) {
+            window.location.href = WapSiteUrl+'/tmpl/member/login.html';
+            return;
+        }
 	});
 </script>
 </body>

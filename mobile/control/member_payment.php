@@ -54,28 +54,34 @@ class member_paymentControl extends mobileMemberControl {
         @header("Content-type: text/html; charset=".CHARSET);
         $pay_sn = $_GET['pay_sn'];
         if (!preg_match('/^\d{18}$/',$pay_sn)){
-            exit('支付单号错误');
+            output_error('支付单号错误');
         }
         //if (in_array($_GET['payment_code'],array('alipay','wxpay_jsapi'))) {
 		//修复订单列表无法使用预付款 V5.5
+
 		if (isset($_GET['payment_code'])) {
             $model_mb_payment = Model('mb_payment');
             $condition = array();
             $condition['payment_code'] = $_GET['payment_code'];
             $mb_payment_info = $model_mb_payment->getMbPaymentOpenInfo($condition);
             if(!$mb_payment_info) {
-                exit('支付方式未开启');
+                output_error('支付方式未开启');
             }
 
             $this->payment_code = $_GET['payment_code'];
             $this->payment_config = $mb_payment_info['payment_config'];
         } else {
-            exit('支付方式提交错误');
+            output_error('支付方式提交错误');
         }
-
-        $pay_info = $this->_get_real_order_info($pay_sn,$_GET);
-        if(isset($pay_info['error'])) {
-            exit($pay_info['error']);
+        //使用站内账户余额支付
+        if($_GET['payment_code'] == 'pd_pay'){
+            $pay_info = $this->_get_real_order_info($pay_sn,$_GET);
+            if(isset($pay_info['error'])) {
+                //TODO 处理支付结果异常信息
+                output_error($pay_info['error']);
+            }else{
+                output_data(array('message'=> '支付成功'));
+            }
         }
 
         //第三方API支付
@@ -125,18 +131,22 @@ class member_paymentControl extends mobileMemberControl {
         if (empty($post['password'])) {
             return $order_list;
         }
+
+        //验证支付密码信息
         $model_member = Model('member');
         $buyer_info = $model_member->getMemberInfoByID($this->member_info['member_id']);
         if ($buyer_info['member_paypwd'] == '' || $buyer_info['member_paypwd'] != md5($post['password'])) {
             return $order_list;
         }
 
-        if ($buyer_info['available_rc_balance'] == 0) {
+        if ($buyer_info['available_rc_balance'] == 0) {  //可用充值卡余额
             $post['rcb_pay'] = null;
         }
-        if ($buyer_info['available_predeposit'] == 0) {
+        if ($buyer_info['available_predeposit'] == 0) { //现金券可用金额
             $post['pd_pay'] = null;
         }
+
+        //充值卡支付金额 = rcb_amount   现金券支付金额 = pd_amount
         if (floatval($order_list[0]['rcb_amount']) > 0 || floatval($order_list[0]['pd_amount']) > 0) {
             return $order_list;
         }
@@ -149,6 +159,8 @@ class member_paymentControl extends mobileMemberControl {
                 $order_list = $logic_buy_1->rcbPay($order_list, $post, $buyer_info);
             }
 
+//            dump($post);
+//            dump($order_list);die;
             //使用现金券支付
             if (!empty($post['pd_pay'])) {
                 $order_list = $logic_buy_1->pdPay($order_list, $post, $buyer_info);
@@ -164,7 +176,6 @@ class member_paymentControl extends mobileMemberControl {
             }
             //特殊订单站内支付处理
             $logic_buy_1->extendInPay($order_list);
-
             $model_member->commit();
         } catch (Exception $e) {
             $model_member->rollback();
@@ -303,7 +314,8 @@ class member_paymentControl extends mobileMemberControl {
         if(!$result['state']) {
             return array('error' => $result['msg']);
         }
-        //优先扣除优惠券
+
+        //优先扣除优惠券  TODO 支付优惠券的处理
         if (!empty($result['data']['order_list'])) {
           $logic_buy_1 = Logic('buy_1');
           $rs = $logic_buy_1->points2Play($result['data']['order_list'], $this->member_info['member_id']);
@@ -335,7 +347,8 @@ class member_paymentControl extends mobileMemberControl {
         if ($pay_amount == 0) {
           $model_pd = Model('predeposit');
           $model_pd->settleOrder();
-            redirect(WAP_SITE_URL.'/tmpl/member/order_list.html');
+            return array('error' => '该订单已经成功支付');
+//            redirect(WAP_SITE_URL.'/tmpl/member/order_list.html');
         }
 
         $result['data']['api_pay_amount'] = ncPriceFormat($pay_amount);

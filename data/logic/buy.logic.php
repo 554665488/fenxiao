@@ -382,7 +382,7 @@ class buyLogic {
     }
 
     /**
-     * 购买第二步
+     * 购买第二步 已经创建订单 待支付
      * @param array $post
      * @param int $member_id
      * @param string $member_name
@@ -556,7 +556,6 @@ class buyLogic {
      */
     private function _createOrderStep1() {
         $post = $this->_post_data;
-
         //取得商品ID和购买数量
         $input_buy_items = $this->_parseItems($post['cart_id']);
         if (empty($input_buy_items)) {
@@ -581,6 +580,7 @@ class buyLogic {
             $input_city_id = intval($input_address_info['city_id']);
         } else {
             $chain_info = Model('chain')->getChainInfo(array('chain_id'=>intval($post['chain']['id'])));
+
             if ($chain_info) {
                 $input_address_info = array();
                 $input_address_info['city_id'] = $chain_info['area_id_2'];
@@ -808,6 +808,7 @@ class buyLogic {
         if(!$fc_id) {
             throw new Exception('F码商品验证错误');
         }
+
 		foreach ($goods_list as $goods) {
           if($goods['z_goods_type'] == 1) {
             $this->_order_data['z_goods_type'] = 1;
@@ -829,7 +830,7 @@ class buyLogic {
 			  $model_setting = Model('setting');
 			  $list_setting = $model_setting->getRewardSetting();
 			$day = $list_setting['opendays'];
-			$time=date("w",time( ));
+			$time=date("w",time());
 			if($time == 0 || $time == 6) {
 				throw new Exception('零售区产品只在周一至周五开放交易');
 			}
@@ -844,10 +845,11 @@ class buyLogic {
 			$d1 = date('Y-m-d') . ' '. $stime;
 			$d2 = date('Y-m-d') . ' '. $etime;
 			if(time() < strtotime($d1) || time() > strtotime($d2)) {
-				throw new Exception("零售区产品只在".$stime."-".$etime."开放交易");
+//				throw new Exception("零售区产品只在".$stime."-".$etime."开放交易");
 			}
 			$model_order = Model('order');
 			$order_info2 = $model_order->getOrderInfo(array('is_wholesale' => 0, 'buyer_id' => $this->_member_info['member_id'],'order_state' => ['egt', 10], 'add_time' => array('gt', strtotime(date('Y-m-d')))),  array());
+
 			if(!empty($order_info2)) {
 				throw new Exception("零售区产品一天只能购买一次");
 			}
@@ -1000,6 +1002,7 @@ class buyLogic {
         $order_list = array();
         //存储通知信息
         $notice_list = array();
+
         //支付方式
         if ($input_pay_name == 'chain' && $input_chain_id) {
         	$store_pay_type_list = array(key($store_cart_list)=>'chain');
@@ -1013,9 +1016,11 @@ class buyLogic {
         }
 
         $pay_sn = $this->_logic_buy_1->makePaySn($member_id);
+
         $order_pay = array();
         $order_pay['pay_sn'] = $pay_sn;
         $order_pay['buyer_id'] = $member_id;
+        //保存未生成支付单
         $order_pay_id = $model_order->addOrderPay($order_pay);
         if (!$order_pay_id) {
             throw new Exception('订单保存失败[未生成支付单]');
@@ -1031,6 +1036,7 @@ class buyLogic {
                 $jjgValidStoreSkus[$vv['store_id']][] = $vv;
             }
         }
+
         foreach ($store_cart_list as $store_id => $goods_list) {
             //取得本店优惠额度(后面用来计算每件商品实际支付金额，结算需要)
             $promotion_total = !empty($store_promotion_total[$store_id]) ? $store_promotion_total[$store_id] : 0;
@@ -1072,21 +1078,25 @@ class buyLogic {
 			
 			$point_total = 0;
 			$order['is_wholesale'] = 0;
+
             //计算总积分
             foreach ($goods_list as $goods_info) {
               $goods_point_total = floatval($goods_info['goods_point_rate2']) * intval($goods_info['goods_num']);
               $point_total += $goods_point_total;
             }
+            // z_goods_type 商品类型，0正常，1优金券商品
 			if(count($goods_list) == 1 && $goods_list[0]['z_goods_type'] == 1) {
-				$order['is_wholesale'] = 1;
+				$order['is_wholesale'] = 1; //is_wholesale  批发订单
 				$order['return_point'] = $point_total;
 			}
 			$is_wholesalecount = intval($model_order->table('orders')->where(['is_wholesale' => 0])->max('can_pay_no'));
 			$order['can_pay_no'] = $is_wholesalecount + 1;
+
             $order_id = $model_order->addOrder($order);
             if (!$order_id) {
-                throw new Exception('订单保存失败[未生成订单数据]');
+                throw new Exception('订单保存失败[未生成订单数据]');//生成订单信息结束
             }
+
             $order['order_id'] = $order_id;
             $order_list[$order_id] = $order;
 
@@ -1132,7 +1142,7 @@ class buyLogic {
 //                 $order_common['promotion_info'] .= '<dl class="nc-store-sales"><dt>会员等级折扣</dt><dd>'.addslashes(sprintf(' [V%s]级会员享受原价%s折',$member_level,$orderdiscount[$store_id]/10)).'</dd></dl>';
 //             }
 
-            //代金券
+            //店铺代金券
             if (isset($input_voucher_list[$store_id])){
                 $order_common['promotion_info'][] = array('店铺代金券',sprintf('使用%s元代金券 编码：%s',$input_voucher_list[$store_id]['voucher_price'],$input_voucher_list[$store_id]['voucher_code']));
             }
@@ -1140,7 +1150,7 @@ class buyLogic {
 
             $insert = $model_order->addOrderCommon($order_common);
             if (!$insert) {
-                throw new Exception('订单保存失败[未生成订单扩展数据]');
+                throw new Exception('订单保存失败[未生成订单扩展数据]');//下单保存orderCommon 结束
             }
 
             //生成order_goods订单商品数据
@@ -1152,7 +1162,7 @@ class buyLogic {
                     throw new Exception('抱歉，部分商品存在下架、变更销售方式或库存不足的情况，请重新选择');
                 }
 				$goods_invit=Model('goods')->getGoodsInfo(array('goods_id'=>$goods_info['goods_id']));
-                if (!intval($goods_info['bl_id'])) {
+                if (!intval($goods_info['bl_id'])) { //bl_id = 0
                     //如果不是优惠套装
                     $order_goods[$i]['order_id'] = $order_id;
                     $order_goods[$i]['goods_id'] = $goods_info['goods_id'];
@@ -1189,7 +1199,7 @@ class buyLogic {
                     $order_goods[$i]['goods_apoint_rate'] = floatval($goods_info['goods_apoint_rate']);
                     $order_goods[$i]['goods_point_rate2'] = floatval($goods_info['goods_point_rate2']);
                     $order_goods[$i]['z_goods_type'] = intval($goods_info['z_goods_type']);
-					$order_goods[$i]['sale_goods_common_id'] = intval($goods_invit['sale_goods_common_id']);
+					$order_goods[$i]['sale_goods_common_id'] = intval($goods_invit['sale_goods_common_id']); //sale_goods_common_id 当前对应销售产品
                     $z_goods_type = intval($goods_info['z_goods_type']);
                     if($z_goods_type == 1 || $z_goods_type == 2) {
                       $order_goods[$i]['points2'] = $goods_info['points2'];
@@ -1320,7 +1330,7 @@ class buyLogic {
                 }
             }
             $model_order->editOrder(array('need_points2' => $totalpoints2, 'need_point' => $totalpoints), array('order_id' => $order_id));
-            $insert = $model_order->addOrderGoods($order_goods);
+            $insert = $model_order->addOrderGoods($order_goods);//TODO 添加orderGoods结束
             if (!$insert) {
                 throw new Exception('订单保存失败[未生成商品数据]');
             }

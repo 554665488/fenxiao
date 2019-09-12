@@ -309,6 +309,7 @@ class predepositModel extends Model {
             case 'order_pay':
                 $data_log['lg_av_amount'] = -$data['amount'];
                 $data_log['lg_desc'] = '下单，支付预存款，订单号: '.$data['order_sn'];
+                //从余额中扣除花的钱
                 $data_pd['available_predeposit'] = array('exp','available_predeposit-'.$data['amount']);
 
                 $data_msg['av_amount'] = -$data['amount'];
@@ -534,7 +535,7 @@ class predepositModel extends Model {
                 throw new Exception('参数错误3');
                 break;
         }
-
+        //变更会员信息
         $update = Model('member')->editMember(array('member_id'=>$data['member_id']),$data_pd);
 
         if (!$update) {
@@ -614,7 +615,7 @@ class predepositModel extends Model {
     public function setOrderApointsPrice($order_id) {
       $price = Model('points')->getLastPrice();
       $order_model = Model('order');
-      $order_model->editOrder(array('apoints_get_price' => $price), array('order_id' => $order_id));
+      $order_model->editOrder(array('apoints_get_price' => $price), array('order_id' => $order_id)); //获得A金券时的价格=apoints_get_price
     }
 	
 	public function settleSaleOrder($order_ids) {

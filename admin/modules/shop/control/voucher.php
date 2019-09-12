@@ -328,6 +328,7 @@ class voucherControl extends SystemControl{
      */
     public function templatelist_xmlOp()
     {
+
         $condition = array();
 
         if ($_REQUEST['advanced']) {

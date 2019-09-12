@@ -834,7 +834,7 @@ class buy_1Logic {
             $data_pd['member_name'] = $member_name;
             $data_pd['amount'] = $order_amount;
             $data_pd['order_sn'] = $order_info['order_sn'];
-
+                //账户余额大于支付的金额
             if ($available_pd_amount >= $order_amount) {
                 //现金券立即支付，订单支付完成
                 $model_pd->changePd('order_pay',$data_pd);
@@ -858,7 +858,7 @@ class buy_1Logic {
                 $data['log_role'] = 'buyer';
                 $data['log_msg'] = '支付订单';
                 $data['log_orderstate'] = ORDER_STATE_PAY;
-                $insert = $model_order->addOrderLog($data);
+                $insert = $model_order->addOrderLog($data);//添加支付成功日志
                 if (!$insert) {
                     throw new Exception('记录订单现金券支付日志出现错误');
                 }
@@ -873,6 +873,7 @@ class buy_1Logic {
                 } else {
                     $order_list[$key]['pd_amount'] = $data_order['pd_amount'] = $order_amount;
                 }
+                //更新订单的支付状态
                 $result = $model_order->editOrder($data_order,array('order_id'=>$order_info['order_id']));
                 if (!$result) {
                     throw new Exception('订单更新失败');
@@ -905,6 +906,7 @@ class buy_1Logic {
                 }
             } else {
                 //暂冻结现金券,后面还需要 API彻底完成支付
+                // order_type 订单类型1普通订单(默认),2预定订单,3门店自提订单
                 if ($available_pd_amount > 0) {
                     $data_pd['amount'] = $available_pd_amount;
                     if ($order_info['order_type'] != 2) {
@@ -913,6 +915,7 @@ class buy_1Logic {
                         //预定订单没有冻结，是直接扣除
                         $model_pd->changePd('order_pay',$data_pd);
                     }
+
                     //现金券支付金额保存到订单
                     $data_order = array();
                     if ($order_info['order_type'] == 2) {
@@ -1000,8 +1003,8 @@ class buy_1Logic {
 
          $buyer_member_info	= Model('member')->getMemberInfoByID($member_id);
          $member_name=$buyer_member_info['member_name'];
-         $member_points=$buyer_member_info['member_points2'];//得到会员积分
-         $member_apoints=$buyer_member_info['coupon_point'];//得到会员释放仓
+         $member_points=$buyer_member_info['member_points2'];//得到会员积分(优惠券余额)
+         $member_apoints=$buyer_member_info['coupon_point'];//得到会员释放仓  //兑换券
 
          //循环订单,用兑换现金支付
          $model_order = Model('order');
@@ -1010,20 +1013,22 @@ class buy_1Logic {
          $np2 = 0;
          $np = 0;
          foreach ($order_list as $order_info) {
-           $need_points2 = floatval($order_info['need_points2']);
+           $need_points2 = floatval($order_info['need_points2']); //所需优惠券数量
            $np2 += $need_points2;
            $need_points = floatval($order_info['need_point']);
            $np += $need_points;
          }
+
          if($np2 == 0 && $np == 0) {
            return TRUE;
          }
+           //需要使用优惠金额
          if($np2 > $member_points) return array('error' => '优惠券不足！');
          if($np > $member_apoints) return array('error' => '增值券不足！');
          try {
            $model_order->beginTransaction();
            foreach ($order_list as $order_info) {
-             $need_points2 = floatval($order_info['need_points2']);//取得订单总价格数据
+             $need_points2 = floatval($order_info['need_points2']);
              $need_points = floatval($order_info['need_point']);//取得订单总价格数据
              $data_order = array();
              $od = $model_order->getOrderInfo(array('order_id'=>$order_info['order_id']));
@@ -1252,7 +1257,7 @@ class buy_1Logic {
     }
 
     /**
-     * 特殊订单站内支付处理
+     * 特殊订单站内支付处理 处理虚拟商品
      */
     public function extendInPay($order_list) {
         //处理预定订单

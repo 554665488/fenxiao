@@ -50,8 +50,8 @@ class orderModel extends Model {
         //追加返回订单扩展表信息
         if (in_array('order_common',$extend)) {
             $order_info['extend_order_common'] = $this->getOrderCommonInfo(array('order_id'=>$order_info['order_id']));
-            $order_info['extend_order_common']['reciver_info'] = unserialize($order_info['extend_order_common']['reciver_info']);
-            $order_info['extend_order_common']['invoice_info'] = unserialize($order_info['extend_order_common']['invoice_info']);
+            $order_info['extend_order_common']['reciver_info'] = unserialize($order_info['extend_order_common']['reciver_info']);//收货人其它信息
+            $order_info['extend_order_common']['invoice_info'] = unserialize($order_info['extend_order_common']['invoice_info']); //发票信息
         }
 
         //追加返回店铺信息
@@ -254,7 +254,7 @@ class orderModel extends Model {
                   }
                   if($order['order_state'] == ORDER_STATE_PAY) {
                     $order['state_desc'] = $state;
-                  } else if($order_info['order_state'] > ORDER_STATE_PAY){
+                  } else if($order['order_state'] > ORDER_STATE_PAY){
                     $order['state_desc'] .= ' '.$state;
                   }
 

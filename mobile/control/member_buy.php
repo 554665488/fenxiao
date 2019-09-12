@@ -150,8 +150,8 @@ class member_buyControl extends mobileMemberControl {
         $param['vat_hash'] = $_POST['vat_hash'];
         $param['offpay_hash'] = $_POST['offpay_hash'];
         $param['offpay_hash_batch'] = $_POST['offpay_hash_batch'];
-        $param['pay_name'] = $_POST['pay_name'];
-        $param['invoice_id'] = $_POST['invoice_id'];
+        $param['pay_name'] = $_POST['pay_name'];//online
+        $param['invoice_id'] = $_POST['invoice_id']; //发票
         $param['rpt'] = $_POST['rpt'];
 
         //处理代金券
@@ -176,12 +176,12 @@ class member_buyControl extends mobileMemberControl {
                 }
             }
         }
-        $param['pd_pay'] = $_POST['pd_pay'];
-        $param['rcb_pay'] = $_POST['rcb_pay'];
-        $param['password'] = $_POST['password'];
-        $param['fcode'] = $_POST['fcode'];
+        $param['pd_pay'] = $_POST['pd_pay']; //0
+        $param['rcb_pay'] = $_POST['rcb_pay']; //0
+        $param['password'] = $_POST['password'];//''
+        $param['fcode'] = $_POST['fcode'];//''
         $param['order_from'] = 2;
-		$param['J_PointInput'] = $_POST['J_PointInput'];
+		$param['J_PointInput'] = $_POST['J_PointInput']; //积分
         $logic_buy = logic('buy');
 
         //得到会员等级
@@ -189,11 +189,13 @@ class member_buyControl extends mobileMemberControl {
         $member_info = $model_member->getMemberInfoByID($this->member_info['member_id']);
         if ($member_info){
             $member_gradeinfo = $model_member->getOneMemberGrade(intval($member_info['member_exppoints']));
-            $member_discount = $member_gradeinfo['orderdiscount'];
+
+            $member_discount = $member_gradeinfo['orderdiscount']; //TODO 会员折扣 不存在这个值
             $member_level = $member_gradeinfo['level'];
         } else {
             $member_discount = $member_level = 0;
         }
+        //折扣区购买商品
         $result = $logic_buy->buyStep2($param, $this->member_info['member_id'], $this->member_info['member_name'], $this->member_info['member_email'],$member_discount,$member_level);
         if(!$result['state']) {
             output_error($result['msg']);
@@ -266,6 +268,7 @@ class member_buyControl extends mobileMemberControl {
 		}
 		$model_setting = Model('setting');
 		$list_setting = $model_setting->getRewardSetting();
+
 		if($order_list[0]['is_wholesale'] == 0) {
 			$order_info2 = $model_order->getOrderInfo(array('is_wholesale' => 0, 'buyer_id' => $this->member_info['member_id'],'order_state' => ['egt', 20], 'payment_time' => array('gt', strtotime(date('Y-m-d')))),  array());
 			if(!empty($order_info2)) {
@@ -282,18 +285,21 @@ class member_buyControl extends mobileMemberControl {
 			$d1 = date('Y-m-d') . ' '. $stime;
 			$d2 = date('Y-m-d') . ' '. $etime;
 			if(time() < strtotime($d1) || time() > strtotime($d2)) {
-				throw new Exception("零售区产品只在".$stime."-".$etime."开放交易");
+//				throw new Exception("零售区产品只在".$stime."-".$etime."开放交易");
+//                output_error("零售区产品只在".$stime."-".$etime."开放交易");
 			}
 			
 			if($order_list[0]['can_pay_date'] == strtotime(date('Y-m-d'))) { // 允许支付
 			
 			} else if($order_list[0]['can_pay_date'] == 0) {
 				
-				$day = intval($list_setting['sale_count']);
+				$day = intval($list_setting['sale_count']);// TODO  今天出售的数量
+//                var_dump($day, '今天出售的数量');
 				if($day <= 0) {
 					$day = 30;
 				}
-				$cp = $model_order->getOrderCount(['can_pay_date' => strtotime(date('Y-m-d'))]);
+				$cp = $model_order->getOrderCount(['can_pay_date' => strtotime(date('Y-m-d'))]);//当天可以支付的订单数量
+//                var_dump($cp,'当天可以支付的订单数量');
 				if($cp < $day) {
 					$model_order->editOrder(array('can_pay_date' => strtotime(date('Y-m-d'))), array('order_id' => $order_list[0]['order_id']));
 				} else {
@@ -324,13 +330,13 @@ class member_buyControl extends mobileMemberControl {
         foreach ($order_list as $key => $order_info) {
             if (!in_array($order_info['payment_code'],array('offline','chain'))) {
                 if ($order_info['order_state'] == ORDER_STATE_NEW) {
-                    $pay['payed_rcb_amount'] += $order_info['rcb_amount'];
-                    $pay['payed_pd_amount'] += $order_info['pd_amount'];
-                    $pay['pay_diff_amount'] += $order_info['order_amount'] - $order_info['rcb_amount'] - $order_info['pd_amount']-$order_info['points_money'];
+                    $pay['payed_rcb_amount'] += $order_info['rcb_amount']; //充值卡支付金额
+                    $pay['payed_pd_amount'] += $order_info['pd_amount'];//现金券支付金额
+                    $pay['pay_diff_amount'] += $order_info['order_amount'] - $order_info['rcb_amount'] - $order_info['pd_amount']-$order_info['points_money']; //积分抵用金额
                 }
             }
         }
-        if ($order_info['chain_id'] && $order_info['payment_code'] == 'chain') {
+        if ($order_info['chain_id'] && $order_info['payment_code'] == 'chain') {//自提门店ID
             $order_list[0]['order_remind'] = '下单成功，请在'.CHAIN_ORDER_PAYPUT_DAY.'日内前往门店提货，逾期订单将自动取消。';
             $flag_chain = 1;
         }
@@ -340,7 +346,7 @@ class member_buyControl extends mobileMemberControl {
             output_error('订单重复支付');
         }
 
-        $payment_list = Model('mb_payment')->getMbPaymentOpenList();
+        $payment_list = Model('mb_payment')->getMbPaymentOpenList();//TODO 支付方式
         if(!empty($payment_list)) {
             foreach ($payment_list as $k => $value) {
                 if ($value['payment_code'] == 'wxpay') {
@@ -354,16 +360,16 @@ class member_buyControl extends mobileMemberControl {
             }
         }
             //显示现金券、支付密码、充值卡
-            $pay['member_available_pd'] = $this->member_info['available_predeposit'];
-            $pay['member_available_rcb'] = $this->member_info['available_rc_balance'];
-            $pay['member_paypwd'] = $this->member_info['member_paypwd'] ? true : false;
+            $pay['member_available_pd'] = $this->member_info['available_predeposit'];//现金券可用金额
+            $pay['member_available_rcb'] = $this->member_info['available_rc_balance'];//可用充值卡余额
+            $pay['member_paypwd'] = $this->member_info['member_paypwd'] ? true : false;//支付密码
         $pay['pay_sn'] = $pay_sn;
-        $pay['payed_amount'] = ncPriceFormat($pay['payed_rcb_amount']+$pay['payed_pd_amount']);
+        $pay['payed_amount'] = ncPriceFormat($pay['payed_rcb_amount']+$pay['payed_pd_amount']); //充值卡支付金额 + 现金券支付金额
         unset($pay['payed_pd_amount']);unset($pay['payed_rcb_amount']);
-        $pay['pay_amount'] = ncPriceFormat($pay['pay_diff_amount']);
+        $pay['pay_amount'] = ncPriceFormat($pay['pay_diff_amount']);//优惠后最终的价格
         unset($pay['pay_diff_amount']);
-        $pay['member_available_pd'] = ncPriceFormat($pay['member_available_pd']);
-        $pay['member_available_rcb'] = ncPriceFormat($pay['member_available_rcb']);
+        $pay['member_available_pd'] = ncPriceFormat($pay['member_available_pd']);//现金券可用金额 使用的支付余额
+        $pay['member_available_rcb'] = ncPriceFormat($pay['member_available_rcb']);//可用充值卡余额
         $pay['payment_list'] = $payment_list ? array_values($payment_list) : array();
         output_data(array('pay_info'=>$pay));
     }

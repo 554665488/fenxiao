@@ -536,8 +536,8 @@ $(function() {
                 rcb_pay:rcb_pay,
                 rpt:rpt,
                 pay_message:msg,
-				J_PointInput:_UserPoints,
-				isPoint:_isUserPoints
+				 J_PointInput:_UserPoints,//积分抵扣
+				isPoint:_isUserPoints//是否使用积分
                 },
             dataType:'json',
             success: function(result){

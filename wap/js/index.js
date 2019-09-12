@@ -173,7 +173,9 @@ $(function() {
 						rollText_i = rollText_k;
 					}
 					for(var j = 1; j <= rollText_k; j++) {
-						document.getElementById("rollTextMenu" + j).style.display = "none";
+					    $("#rollTextMenu" + j).hide();
+						 // document.getElementById("rollTextMenu" + j).style.display = "none";
 					}
-					document.getElementById("rollTextMenu" + rollText_i).style.display = "block";
+					$("#rollTextMenu" + rollText_i).show();
+					//document.getElementById("rollTextMenu" + rollText_i).style.display = "block";
 				}
